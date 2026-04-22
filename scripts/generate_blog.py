@@ -1,6 +1,7 @@
 import os
 import datetime
 import re
+import json
 import google.generativeai as genai
 from pathlib import Path
 
@@ -11,10 +12,12 @@ TEMPLATE_PATH = "scripts/blog_template.html"
 INSIGHTS_DIR = "insights"
 
 # Initialize Gemini
+if not GEMINI_API_KEY:
+    print("CRITICAL ERROR: GEMINI_API_KEY environment variable is not set.")
+    exit(1)
+
 genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel('gemini-pro')
-
-import json
 
 def generate_blog_content():
     prompt = """
