@@ -834,6 +834,28 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.05);
 }
 
+.client-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    width: auto;
+    max-width: 140px;
+}
+
+.client-logo img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(1) opacity(0.5);
+    transition: var(--transition);
+}
+
+.client-logo:hover img {
+    filter: brightness(0) invert(1) opacity(1);
+    transform: scale(1.05);
+}
+
 /* Numbers Bar — Counters */
 .proof-numbers {
     display: flex;
