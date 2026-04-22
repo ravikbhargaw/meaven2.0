@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const heroHeight = window.innerHeight;
                     if (scrolled < heroHeight) {
                         const parallaxOffset = scrolled * 0.3;
-                        heroImg.style.transform = `scale(1.05) translateY(${parallaxOffset}px)`;
+                        heroImg.style.transform = `translate3d(0, ${parallaxOffset}px, 0) scale(1.05)`;
                     }
                 });
             }
