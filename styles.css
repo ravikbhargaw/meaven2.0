@@ -2178,3 +2178,25 @@ h1, h2, h3, h4, h5, h6 {
         padding: var(--space-2xl) var(--space-md);
     }
 }
+
+
+/* Map Container */
+.map-container {
+    margin-top: var(--space-xl);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.map-container iframe {
+    display: block;
+    filter: grayscale(1) invert(0.9) contrast(1.2);
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.map-container:hover iframe {
+    filter: grayscale(0.2) invert(0) contrast(1);
+    opacity: 1;
+}
