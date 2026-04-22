@@ -2079,7 +2079,7 @@ h1, h2, h3, h4, h5, h6 {
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
+        height: 100dvh;
         background: rgba(8, 9, 10, 0.97);
         backdrop-filter: blur(24px);
         -webkit-backdrop-filter: blur(24px);
