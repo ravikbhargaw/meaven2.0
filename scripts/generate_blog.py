@@ -16,7 +16,21 @@ def generate_blog_content():
         print("ERROR: GEMINI_API_KEY is not set.")
         exit(1)
 
-    url = f"https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key={GEMINI_API_KEY.strip()}"
+    # Auto-discovery: List available models first
+    list_url = f"https://generativelanguage.googleapis.com/v1/models?key={GEMINI_API_KEY.strip()}"
+    model_name = "models/gemini-pro" # Default
+    
+    try:
+        with urllib.request.urlopen(list_url) as response:
+            models_data = json.loads(response.read().decode('utf-8'))
+            model_names = [m['name'] for m in models_data.get('models', []) if 'generateContent' in m.get('supportedGenerationMethods', [])]
+            if model_names:
+                model_name = model_names[0] # Use the first available model
+                print(f"Auto-discovered model: {model_name}")
+    except Exception as e:
+        print(f"Discovery Warning: {str(e)}. Falling back to default.")
+
+    url = f"https://generativelanguage.googleapis.com/v1/{model_name}:generateContent?key={GEMINI_API_KEY.strip()}"
     
     prompt = """
     Write a high-quality, professional B2B blog post for 'Meaven Designs' (Bangalore office partitions).
