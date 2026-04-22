@@ -36,7 +36,11 @@ jobs:
     - name: Generate Blog Post
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      run: python scripts/generate_blog.py
+      run: |
+        echo "Diagnostic: Checking environment..."
+        python --version
+        echo "Diagnostic: API Key Length is ${#GEMINI_API_KEY} characters."
+        python scripts/generate_blog.py
 
     - name: Commit and push changes
       run: |

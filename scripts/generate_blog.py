@@ -53,6 +53,10 @@ def generate_blog_content():
                 print(f"Error: No JSON in AI response: {text}")
                 exit(1)
             return json.loads(match.group(0))
+    except urllib.error.HTTPError as e:
+        print(f"HTTP Error: {e.code} {e.reason}")
+        print(f"Response Body: {e.read().decode('utf-8')}")
+        exit(1)
     except Exception as e:
         print(f"API Error: {str(e)}")
         exit(1)
