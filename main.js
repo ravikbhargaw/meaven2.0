@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (scope) waMessage += `Scope: ${scope}\n`;
             if (message) waMessage += `\nMessage: ${message}`;
 
-            const waUrl = `https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(waMessage)}`;
+            const waUrl = `https://wa.me/918296077466?text=${encodeURIComponent(waMessage)}`;
 
             // Show success state with animation
             const submitBtn = enquiryForm.querySelector('button[type="submit"]');
