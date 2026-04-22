@@ -16,7 +16,7 @@ def generate_blog_content():
         print("ERROR: GEMINI_API_KEY is not set.")
         exit(1)
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key={GEMINI_API_KEY.strip()}"
     
     prompt = """
     Write a high-quality, professional B2B blog post for 'Meaven Designs' (Bangalore office partitions).
