@@ -2479,3 +2479,29 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px dashed var(--accent);
     padding-bottom: 2px;
 }
+
+/* ========================================
+   BOTPRESS CUSTOM STYLING
+   ======================================== */
+#bp-webchat-container {
+    font-family: var(--font-body) !important;
+}
+
+#bp-webchat-container button.bpw-floating-button {
+    background: var(--bg-secondary) !important;
+    backdrop-filter: blur(12px) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+    transition: var(--transition) !important;
+}
+
+#bp-webchat-container button.bpw-floating-button:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+    border-color: var(--accent) !important;
+}
+
+#bp-webchat-container .bpw-layout {
+    border-radius: var(--radius-lg) !important;
+    border: 1px solid var(--border-medium) !important;
+    backdrop-filter: blur(20px) !important;
+}
