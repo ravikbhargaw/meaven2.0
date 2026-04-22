@@ -82,7 +82,7 @@
                 <!-- Enquiry Form -->
                 <div class="contact-form-wrapper animate-reveal">
                     <h2>Send an Enquiry</h2>
-                    <form class="enquiry-form" id="enquiryForm">
+                    <form class="enquiry-form" id="enquiryForm" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name *</label>
@@ -91,6 +91,16 @@
                             <div class="form-group">
                                 <label for="company">Company</label>
                                 <input type="text" id="company" name="company" placeholder="Company name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="Your email address">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Your phone number">
                             </div>
                         </div>
                         <div class="form-row">

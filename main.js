@@ -160,48 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Enquiry Form ---
-    const enquiryForm = document.getElementById('enquiryForm');
-
-    if (enquiryForm) {
-        enquiryForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const formData = new FormData(enquiryForm);
-            const name = formData.get('name');
-            const company = formData.get('company');
-            const city = formData.get('city');
-            const projectType = formData.get('projectType');
-            const scope = formData.get('scope');
-            const message = formData.get('message');
-
-            // Build WhatsApp message
-            let waMessage = `Hi Meaven, I'd like to enquire about a project.\n\n`;
-            waMessage += `Name: ${name}\n`;
-            if (company) waMessage += `Company: ${company}\n`;
-            if (city) waMessage += `City: ${city}\n`;
-            if (projectType) waMessage += `Project Type: ${projectType}\n`;
-            if (scope) waMessage += `Scope: ${scope}\n`;
-            if (message) waMessage += `\nMessage: ${message}`;
-
-            const waUrl = `https://wa.me/918296077466?text=${encodeURIComponent(waMessage)}`;
-
-            // Show success state with animation
-            const submitBtn = enquiryForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Redirecting to WhatsApp...';
-            submitBtn.style.opacity = '0.7';
-            submitBtn.style.pointerEvents = 'none';
-
-            setTimeout(() => {
-                window.open(waUrl, '_blank');
-                submitBtn.textContent = originalText;
-                submitBtn.style.opacity = '1';
-                submitBtn.style.pointerEvents = '';
-                enquiryForm.reset();
-            }, 600);
-        });
-    }
+    
 
     // --- Smooth scroll for anchor links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
