@@ -802,97 +802,36 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.01em;
 }
 
-.proof-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+.clients-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem 3.5rem;
     margin-bottom: var(--space-xl);
-}
-
-.proof-card {
-    padding: var(--space-lg);
+    padding: var(--space-xl);
     background: var(--bg-card);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
-    transition: var(--transition);
     backdrop-filter: blur(var(--glass-blur));
-    position: relative;
-    overflow: hidden;
 }
 
-.proof-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.proof-card:hover {
-    border-color: var(--border-accent);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
-}
-
-.proof-card:hover::before {
-    opacity: 0.6;
-}
-
-.proof-tag {
-    display: inline-block;
-    padding: 0.375rem 1rem;
-    background: var(--accent-muted);
-    border-radius: var(--radius-pill);
-    font-size: 0.6875rem;
-    font-weight: 600;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: var(--space-md);
-}
-
-.proof-stats {
-    display: flex;
-    gap: var(--space-xl);
-    margin-bottom: var(--space-md);
-}
-
-.proof-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.stat-value {
+.client-name {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
     font-weight: 700;
     color: var(--text-primary);
+    opacity: 0.4;
+    transition: var(--transition);
+    cursor: default;
+    letter-spacing: -0.02em;
+    text-align: center;
 }
 
-.stat-label {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-
-.proof-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
-
-.proof-dot {
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: var(--text-muted);
+.client-name:hover {
+    opacity: 1;
+    color: var(--accent);
+    transform: scale(1.05);
 }
 
 /* Numbers Bar — Counters */
