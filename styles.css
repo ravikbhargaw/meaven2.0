@@ -2553,3 +2553,225 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(20px) !important;
 }
 
+
+/* ========================================
+   LANDING PAGE — B2B Operational Excellence
+   ======================================== */
+.lp-body {
+    background-color: var(--bg-primary);
+}
+
+.lp-hero {
+    position: relative;
+    min-height: 90dvh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.lp-hero-content {
+    max-width: 800px;
+    z-index: 2;
+    position: relative;
+}
+
+.lp-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.lp-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.lp-manifesto {
+    padding: var(--space-3xl) 0;
+    background: var(--bg-secondary);
+}
+
+.manifesto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .manifesto-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.manifesto-header h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: var(--space-md);
+}
+
+.manifesto-header p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.manifesto-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.manifesto-card {
+    padding: var(--space-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    transition: var(--transition);
+}
+
+.manifesto-card:hover {
+    border-color: var(--border-accent);
+    transform: translateX(8px);
+}
+
+.card-num {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.2em;
+}
+
+/* Comparison Table */
+.lp-comparison {
+    padding: var(--space-3xl) 0;
+}
+
+.comparison-table {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.comp-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.comp-row.head {
+    background: var(--bg-tertiary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+
+.comp-col {
+    padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.comp-col.highlight {
+    background: rgba(201, 165, 92, 0.05);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Expertise Grid */
+.lp-expertise {
+    padding: var(--space-2xl) 0;
+    background: var(--bg-secondary);
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.expertise-item {
+    text-align: center;
+    padding: var(--space-lg);
+}
+
+.exp-icon {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+    opacity: 0.3;
+    margin-bottom: 1rem;
+}
+
+/* Social & Trust */
+.lp-social {
+    padding: var(--space-3xl) 0;
+    text-align: center;
+}
+
+.social-stat {
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--text-primary), var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-text {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3xl);
+}
+
+.client-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    opacity: 0.6;
+}
+
+.client-logo {
+    height: 32px;
+    width: auto;
+    filter: grayscale(1) invert(1);
+}
+
+/* Final CTA */
+.lp-final-cta {
+    padding: var(--space-3xl) 0;
+}
+
+.final-cta-block {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-3xl) var(--space-lg);
+    background: radial-gradient(circle at center, var(--bg-tertiary) 0%, transparent 100%);
+}
+
+.final-cta-block h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: var(--space-md);
+}
+
+.final-cta-block p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xl);
+}

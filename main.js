@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Hero Parallax ---
-    const heroImg = document.querySelector('.hero-bg img');
+    const heroImg = document.querySelector('.hero-bg img, .lp-hero-bg img');
     if (heroImg) {
         window.addEventListener('scroll', () => {
             if (!ticking) {
