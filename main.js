@@ -1,5 +1,5 @@
-/* ========================================
-   MEAVEN DESIGNS — PREMIUM JS
+﻿/* ========================================
+   MEAVEN DESIGNS  PREMIUM JS
    Animations, counters, parallax, navigation
    ======================================== */
 
