@@ -22,71 +22,77 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="lp-body">
+<body>
 
-    <!-- Executive Navigation -->
-    <nav class="navbar scrolled">
+    <!-- Standard Navigation -->
+    <nav class="navbar scrolled" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
                 <img src="images/logo.png" alt="Meaven Designs" class="logo-img">
             </a>
-            <div class="nav-actions">
-                <a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20receive%20your%20Company%20Profile%20PDF." class="btn-text">Download Framework <span>↓</span></a>
-            </div>
+            <ul class="nav-links">
+                <li><a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20receive%20your%20Operational%20Framework%20PDF." class="footer-download-btn">Download Framework</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Section 1: Hero — Focus on Reliability -->
-    <section class="lp-hero">
-        <div class="container">
-            <div class="lp-hero-content animate-reveal">
-                <h1 class="hero-headline">Execution Without <br><em>the Chaos.</em></h1>
-                <p class="hero-sub">A specialized glass execution partner for Bengaluru’s premium fit-outs, built to eliminate last-minute delays and site-level friction.</p>
-                <div class="hero-ctas">
-                    <a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20receive%20your%20Operational%20Framework%20PDF." class="btn btn-primary">Download Operational Framework</a>
-                    <a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20consult%20an%20Execution%20Expert." class="btn btn-secondary">Consult an Execution Expert</a>
-                </div>
-            </div>
-        </div>
-        <div class="lp-hero-bg">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" alt="Minimalist Office Architecture" class="parallax-img">
+    <!-- Section 1: Hero (Home Style) -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" alt="Premium Glass Execution Hub" loading="eager">
             <div class="hero-overlay"></div>
         </div>
+        <div class="hero-content">
+            <div class="hero-badge animate-reveal">Premium Glass Execution Hub</div>
+            <h1 class="hero-headline animate-reveal">Execution Without <em>the Chaos.</em></h1>
+            <p class="hero-sub animate-reveal">A specialized glass execution partner for Bengaluru’s premium fit-outs, built to eliminate last-minute delays and site-level friction.</p>
+            <div class="hero-ctas animate-reveal">
+                <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20receive%20your%20Operational%20Framework%20PDF." class="btn btn-primary">Download Operational Framework</a>
+                <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20consult%20an%20Execution%20Expert." class="btn btn-secondary">Consult an Expert</a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator animate-reveal">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
     </section>
 
-    <!-- Section 2: Meaven Intelligence Framework -->
-    <section class="lp-manifesto">
+    <!-- Section 2: Meaven Intelligence (Why Style) -->
+    <section class="why-section" id="intelligence">
         <div class="container">
-            <div class="manifesto-header animate-reveal">
+            <div class="section-header animate-reveal">
                 <span class="section-label">Meaven Intelligence</span>
-                <h2>Eliminating the <br>Standard Vendor Friction.</h2>
+                <h2 class="section-title">Execution over<br>Product.</h2>
             </div>
-            <div class="manifesto-cards">
-                <div class="manifesto-card animate-reveal">
-                    <div class="card-num">01</div>
+            <div class="why-grid">
+                <div class="why-card animate-reveal">
+                    <div class="why-icon">01</div>
                     <h3>Precision Mapping</h3>
-                    <p>Using laser-tech to ensure zero measurement errors. We scan the site so the glass fits perfectly the first time, every time.</p>
+                    <p>Using laser-tech to ensure zero measurement errors. No site-level friction, guaranteed.</p>
+                    <div class="card-accent"></div>
                 </div>
-                <div class="manifesto-card animate-reveal">
-                    <div class="card-num">02</div>
+                <div class="why-card animate-reveal">
+                    <div class="why-icon">02</div>
                     <h3>Timeline Integrity</h3>
-                    <p>AI-driven lead tracking for guaranteed handovers. Real-time forecasting means you are never left guessing about move-in dates.</p>
+                    <p>AI-driven lead tracking for guaranteed handovers. Know your move-in date with 100% certainty.</p>
+                    <div class="card-accent"></div>
                 </div>
-                <div class="manifesto-card animate-reveal">
-                    <div class="card-num">03</div>
+                <div class="why-card animate-reveal">
+                    <div class="why-icon">03</div>
                     <h3>Operational Transparency</h3>
-                    <p>Real-time updates for project delivery teams. From procurement to final seal, every stage is visible and vetted.</p>
+                    <p>Real-time updates for project delivery teams. Zero "last-minute surprises."</p>
+                    <div class="card-accent"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 3: Anti-Headache Comparison -->
+    <!-- Section 3: Comparison (Apple Style) -->
     <section class="lp-comparison">
         <div class="container">
             <div class="section-header text-center animate-reveal">
-                <span class="section-label">Anti-Headache Comparison</span>
-                <h2 class="section-title">Execution vs. Product</h2>
+                <span class="section-label">Anti-Headache</span>
+                <h2 class="section-title">The Cost of a Headache</h2>
             </div>
             <div class="comparison-grid animate-reveal">
                 <div class="comp-card">
@@ -95,80 +101,82 @@
                         <li class="comp-item">Manual measurements & tape errors</li>
                         <li class="comp-item">Reactive communication ("Status checks")</li>
                         <li class="comp-item">"Hidden" site costs & recut charges</li>
-                        <li class="comp-item">Last-minute surprises & missed dates</li>
+                        <li class="comp-item">Delivery delays & site-level friction</li>
                     </ul>
                 </div>
                 <div class="comp-card premium">
-                    <h4>Meaven's Headache-less Execution</h4>
+                    <h4>Meaven's Execution</h4>
                     <ul class="comp-list">
-                        <li class="comp-item">Laser-tech mapping (Zero-error policy)</li>
-                        <li class="comp-item">Proactive status via executive portal</li>
+                        <li class="comp-item">Laser-tech mapping (Zero-error)</li>
+                        <li class="comp-item">Proactive status via client portal</li>
                         <li class="comp-item">Transparent productized pricing</li>
-                        <li class="comp-item">No last-minute surprises. Guaranteed.</li>
+                        <li class="comp-item">100% On-time completion rate</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 4: Portfolio Teaser — Strategic Projects -->
-    <section class="lp-expertise">
+    <!-- Section 4: Strategic Projects (Mosaic Style) -->
+    <section class="projects-section" id="strategic-projects">
         <div class="container">
             <div class="section-header animate-reveal">
                 <span class="section-label">Strategic Projects</span>
-                <h2>Portfolio Highlights</h2>
+                <h2 class="section-title">Portfolio Highlights</h2>
             </div>
-            <div class="expertise-grid">
-                <div class="project-teaser animate-reveal">
-                    <div class="teaser-image">
-                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800" alt="Large Scale Office Interior">
+            <div class="projects-grid">
+                <div class="project-card animate-reveal">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800" alt="Managed Office Interiors">
                     </div>
-                    <h4>Managed Office Ecosystems</h4>
+                    <div class="project-meta">
+                        <div class="project-info">
+                            <h3>Corporate Fit-outs</h3>
+                            <p>Strategic Workspace</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-teaser animate-reveal">
-                    <div class="teaser-image">
-                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800" alt="Executive Glass Partitioning">
+                <div class="project-card animate-reveal">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800" alt="Premium Coworking">
                     </div>
-                    <h4>Premium Coworking Hubs</h4>
-                </div>
-                <div class="project-teaser animate-reveal">
-                    <div class="teaser-image">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" alt="Architectural Hardware Details">
+                    <div class="project-meta">
+                        <div class="project-info">
+                            <h3>Coworking Hubs</h3>
+                            <p>Executive Glass</p>
+                        </div>
                     </div>
-                    <h4>Architectural Glass Packages</h4>
-                </div>
-                <div class="project-teaser animate-reveal">
-                    <div class="teaser-image">
-                        <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&q=80&w=800" alt="Clean Office Floor Plan">
-                    </div>
-                    <h4>Corporate HQ Fit-outs</h4>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Section 5: Trust Bar -->
-    <section class="lp-social">
+    <section class="stats-section">
         <div class="container">
-            <div class="social-content text-center animate-reveal">
-                <div class="social-stat">700k+</div>
-                <div class="social-text">Sq. Ft. of Seamless Handover in Bengaluru.</div>
+            <div class="stats-grid animate-reveal">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="700">700k+</div>
+                    <div class="stat-label">Sq. Ft. Handover</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="100">100%</div>
+                    <div class="stat-label">On-time Completion</div>
+                </div>
             </div>
-            <div class="client-grid animate-reveal">
-                <img src="images/bloomworkspace.in logo11.webp" alt="Bloom Workspace" class="client-logo">
-                <img src="images/brainchildtech.com logo10.webp" alt="Brainchild Tech" class="client-logo">
-                <img src="images/brigadeplus.com logo9.svg" alt="Brigade" class="client-logo">
-                <img src="images/flipspaces.com logo9.png" alt="Flipspaces" class="client-logo">
-                <img src="images/homelane.com logo9.svg" alt="HomeLane" class="client-logo">
-                <img src="images/obeya.in logo9.png" alt="Obeya" class="client-logo">
+            <div class="client-grid animate-reveal" style="margin-top: 4rem;">
+                <img src="images/bloomworkspace.in logo11.webp" alt="Client Logo" class="client-logo">
+                <img src="images/brainchildtech.com logo10.webp" alt="Client Logo" class="client-logo">
+                <img src="images/brigadeplus.com logo9.svg" alt="Client Logo" class="client-logo">
+                <img src="images/obeya.in logo9.png" alt="Client Logo" class="client-logo">
             </div>
         </div>
     </section>
 
-    <!-- Section 6: Final CTA -->
+    <!-- Section 6: Closing CTA -->
     <section class="lp-final-cta">
         <div class="container">
-            <div class="final-cta-block animate-reveal">
+            <div class="final-cta-block animate-reveal text-center">
                 <h2>Let’s protect your move-in date.</h2>
                 <p>High-stakes projects don't have room for execution friction. Partner with the team that owns the load.</p>
                 <div class="hero-ctas" style="justify-content: center;">
@@ -180,9 +188,14 @@
 
     <footer class="footer">
         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="Meaven Designs" class="footer-logo">
+                    <p>Execution Hub — Bengaluru</p>
+                </div>
+            </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 Meaven Designs. Internal Operational Framework.</p>
-                <p>Execution Hub — Bengaluru</p>
             </div>
         </div>
     </footer>
