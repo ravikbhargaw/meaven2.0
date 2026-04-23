@@ -323,11 +323,31 @@ footer {
     transform: scale(1.03);
 }
 
-/* Editorial Spanning */
-.span-8 { grid-column: span 8; aspect-ratio: 16/10; }
-.span-4 { grid-column: span 4; aspect-ratio: 10/12; } /* Portrait-friendly */
-.span-6 { grid-column: span 6; aspect-ratio: 1/1; }
-.span-12 { grid-column: span 12; aspect-ratio: 21/9; }
+/* Editorial Spanning with Fallbacks */
+.mosaic-item {
+    min-height: 300px; /* Prevents collapsing */
+}
+
+.span-8 { 
+    grid-column: span 8; 
+    aspect-ratio: 16/10;
+    min-height: 450px;
+}
+.span-4 { 
+    grid-column: span 4; 
+    aspect-ratio: 10/12;
+    min-height: 450px;
+}
+.span-6 { 
+    grid-column: span 6; 
+    aspect-ratio: 1/1;
+    min-height: 400px;
+}
+.span-12 { 
+    grid-column: span 12; 
+    aspect-ratio: 21/9;
+    min-height: 500px;
+}
 
 .mosaic-label {
     position: absolute;
