@@ -49,19 +49,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Scroll Reveal Animations ---
     const revealElements = document.querySelectorAll('.animate-reveal');
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
+                // If it's a project card inside a grid, stagger it
+                if (entry.target.classList.contains('project-card')) {
+                    const cards = Array.from(document.querySelectorAll('.project-card:not(.hidden)'));
+                    const index = cards.indexOf(entry.target);
+                    setTimeout(() => {
+                        entry.target.classList.add('revealed');
+                    }, (index % 4) * 100); // Stagger by 100ms per item in row
+                } else {
+                    entry.target.classList.add('revealed');
+                }
                 revealObserver.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.08,
-        rootMargin: '0px 0px -40px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
@@ -137,23 +145,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const filter = btn.dataset.filter;
 
                 projectCards.forEach((card, index) => {
+                    card.classList.remove('revealed'); // Reset for re-animation
+                    
                     if (filter === 'all' || card.dataset.type === filter) {
                         card.classList.remove('hidden');
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
                         
                         setTimeout(() => {
-                            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, index * 80);
+                            card.classList.add('revealed');
+                        }, index * 60);
                     } else {
-                        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(10px)';
-                        setTimeout(() => {
-                            card.classList.add('hidden');
-                        }, 300);
+                        card.classList.add('hidden');
                     }
                 });
             });
