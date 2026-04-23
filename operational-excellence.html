@@ -87,7 +87,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="comparison-section">
         <div class="container">
             <h2 style="margin-bottom: 3rem;">Technical Capabilities</h2>
             <div class="grid-3">
@@ -107,7 +107,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="framework-section">
         <div class="container">
             <h2>Our Operational Framework</h2>
             <p class="subheadline">Three pillars engineered to remove chaos at every stage of a commercial glass fit-out — from first survey to final sign-off.</p>
@@ -151,7 +151,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="portfolio-section">
         <div class="container">
             <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Work That Speaks for Itself</h2>
             <p class="subheadline">A curated record of commercial fit-outs delivered across Bengaluru — each one on time, on spec, and without the friction.</p>
@@ -263,5 +263,50 @@
         <p style="opacity: 0.5; font-size: 0.875rem;">Execution Hub — Bengaluru, India</p>
     </footer>
 
+    <!-- Meaven B2B Engagement Engine -->
+    <script>
+        // 1. Capture Client Reference from URL (?ref=Name)
+        const urlParams = new URLSearchParams(window.location.search);
+        const clientRef = urlParams.get('ref') || 'Direct_Visit';
+
+        // 2. Log Initial Entry to GA4
+        if (window.gtag) {
+            gtag('event', 'hub_entry', {
+                'client_id': clientRef,
+                'page_path': window.location.pathname
+            });
+            console.log(`B2B Tracking Active: Lead [${clientRef}]`);
+        }
+
+        // 3. Scroll Milestone Tracking (Option 2)
+        const trackMilestone = (sectionId, milestoneName) => {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (window.gtag) {
+                            gtag('event', 'hub_milestone', {
+                                'client_id': clientRef,
+                                'milestone': milestoneName
+                            });
+                        }
+                        console.log(`Milestone Reached: ${milestoneName} by ${clientRef}`);
+                        observer.unobserve(section); // Track once per session
+                    }
+                });
+            }, { threshold: 0.5 }); // Trigger when 50% of section is visible
+
+            observer.observe(section);
+        };
+
+        // Set Milestones
+        document.addEventListener('DOMContentLoaded', () => {
+            trackMilestone('comparison-section', 'Manifesto_Read');
+            trackMilestone('framework-section', 'Framework_Reviewed');
+            trackMilestone('portfolio-section', 'Portfolio_Audit');
+        });
+    </script>
 </body>
 </html>
