@@ -21,6 +21,51 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .sticky-cta {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(201, 165, 92, 0.3);
+            padding: 0.75rem 2rem;
+            border-radius: 100px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: 0.6s cubic-bezier(0.2, 0, 0.2, 1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .sticky-cta.visible {
+            bottom: 2rem;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
 </head>
 <body class="lp-editorial">
 
@@ -28,9 +73,10 @@
     <nav class="navbar scrolled">
         <div class="ed-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <a href="index.html" class="nav-logo">
-                <img src="images/logo.png" alt="Meaven Designs" class="logo-img">
+                <img src="images/logo.png" alt="Meaven Designs - Premium Glass Execution" class="logo-img">
             </a>
-            <a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20receive%20your%20Operational%20Framework%20PDF." class="btn-text">Download Framework <span>↓</span></a>
+            <a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20receive%20your%20Operational%20Framework%20PDF." 
+               class="btn-text" data-track="framework-download-nav">Download Framework <span>↓</span></a>
         </div>
     </nav>
 
@@ -40,11 +86,13 @@
             <span class="ed-label animate-reveal">B2B Operational Framework</span>
             <h1 class="ed-hero-headline animate-reveal">Execution <br>Without <br><em>Chaos.</em></h1>
             <div class="hero-ctas animate-reveal">
-                <a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20receive%20your%20Operational%20Framework%20PDF." class="btn btn-primary">Download Framework</a>
+                <a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20receive%20your%20Operational%20Framework%20PDF." 
+                   class="btn btn-primary" data-track="framework-download-hero">Download Framework</a>
             </div>
         </div>
         <div class="ed-hero-image animate-reveal">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" alt="Cinematic Glass Architecture">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" 
+                 alt="Cinematic wide shot of high-precision architectural glass in a modern office.">
         </div>
     </section>
 
@@ -72,7 +120,7 @@
                     <h3>Timeline Integrity</h3>
                     <p>AI-driven lead tracking for guaranteed handovers. Real-time forecasting for busy executives.</p>
                 </div>
-                <div class="ed-mosaic-item hero animate-reveal">
+                <div class="ed-mosaic-item hero animate-reveal" title="Architectural precision backdrop">
                     <!-- Panorama Background -->
                 </div>
                 <div class="ed-mosaic-item narrow animate-reveal" style="background: var(--accent); color: #000;">
@@ -118,7 +166,8 @@
             </div>
             <div class="projects-grid">
                 <div class="project-card animate-reveal">
-                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800" alt="Strategic Project" class="macro-shot">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800" 
+                         alt="Managed office ecosystem with premium glass partitions." class="macro-shot">
                     <div class="project-meta">
                         <div class="project-info">
                             <h3>Corporate Fit-outs</h3>
@@ -127,7 +176,8 @@
                     </div>
                 </div>
                 <div class="project-card animate-reveal">
-                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800" alt="Strategic Project" class="macro-shot">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800" 
+                         alt="Executive workspace featuring acoustic glass solutions." class="macro-shot">
                     <div class="project-meta">
                         <div class="project-info">
                             <h3>Coworking Spaces</h3>
@@ -145,10 +195,21 @@
             <span class="ed-label">Next Steps</span>
             <h2 class="ed-hero-headline" style="font-size: clamp(3rem, 6vw, 5rem);">Protect your <br>move-in date.</h2>
             <div class="hero-ctas" style="justify-content: center; margin-top: var(--space-xl);">
-                <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I'd%20like%20to%20schedule%20a%2010-minute%20Operational%20Review." class="btn btn-primary">Schedule Operational Review</a>
+                <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I'd%20like%20to%20schedule%20a%2010-minute%20Operational%20Review." 
+                   class="btn btn-primary" data-track="final-review-cta">Schedule Operational Review</a>
             </div>
         </div>
     </section>
+
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta" id="sticky-cta">
+        <span style="font-size: 0.8125rem; font-weight: 600; opacity: 0.7;">Execution Framework</span>
+        <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I'd%20like%20to%20receive%20your%20Operational%20Framework%20PDF." 
+           class="btn btn-primary" style="padding: 0.5rem 1.5rem;" data-track="framework-download-sticky">Download PDF</a>
+    </div>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="back-to-top">↑</div>
 
     <footer class="footer">
         <div class="ed-container">
@@ -160,5 +221,39 @@
     </footer>
 
     <script src="main.js"></script>
+    <script>
+        // --- Sticky CTA & Back to Top Logic ---
+        const stickyCta = document.getElementById('sticky-cta');
+        const btt = document.getElementById('back-to-top');
+        const hero = document.getElementById('hero');
+
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            if (scrollPos > 600) {
+                stickyCta.classList.add('visible');
+                btt.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+                btt.classList.remove('visible');
+            }
+        });
+
+        btt.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- Event Tracking Logic ---
+        document.querySelectorAll('[data-track]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const action = button.getAttribute('data-track');
+                if (window.gtag) {
+                    gtag('event', 'click', {
+                        'event_category': 'B2B_Hub',
+                        'event_label': action
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
