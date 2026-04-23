@@ -1,11 +1,11 @@
-﻿/* ========================================
-   MEAVEN DESIGNS ΓÇö PREMIUM DARK DESIGN SYSTEM
-   Apple-Inspired Dark Mode ┬╖ Glassmorphism
+/* ========================================
+   MEAVEN DESIGNS — PREMIUM DARK DESIGN SYSTEM
+   Apple-Inspired Dark Mode · Glassmorphism
    ======================================== */
 
 /* --- CSS Custom Properties --- */
 :root {
-    /* Core Palette ΓÇö Rich Darks with Subtle Blue Undertones */
+    /* Core Palette — Rich Darks with Subtle Blue Undertones */
     --bg-primary: #08090a;
     --bg-secondary: #0c0d0f;
     --bg-tertiary: #131518;
@@ -20,7 +20,7 @@
     --text-muted: #55556a;
     --text-dark: #08090a;
 
-    /* Accent ΓÇö Refined Gold */
+    /* Accent — Refined Gold */
     --accent: #c9a55c;
     --accent-hover: #dbb96e;
     --accent-muted: rgba(201, 165, 92, 0.12);
@@ -139,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ========================================
-   NAVIGATION ΓÇö Frosted Glass
+   NAVIGATION — Frosted Glass
    ======================================== */
 .navbar {
     position: fixed;
@@ -294,7 +294,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ========================================
-   BUTTONS ΓÇö Pill-shaped with Glow
+   BUTTONS — Pill-shaped with Glow
    ======================================== */
 .btn {
     display: inline-flex;
@@ -359,7 +359,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ========================================
-   HERO SECTION ΓÇö Cinematic
+   HERO SECTION — Cinematic
    ======================================== */
 .hero {
     position: relative;
@@ -553,7 +553,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ========================================
-   WHY MEAVEN ΓÇö Glass Cards
+   WHY MEAVEN — Glass Cards
    ======================================== */
 .why-section {
     padding: var(--space-3xl) 0;
@@ -663,7 +663,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ========================================
-   PRODUCTS PREVIEW ΓÇö Image Cards
+   PRODUCTS PREVIEW — Image Cards
    ======================================== */
 .products-preview {
     padding: var(--space-3xl) 0;
@@ -773,7 +773,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ========================================
-   SOCIAL PROOF ΓÇö Stats & Cards
+   SOCIAL PROOF — Stats & Cards
    ======================================== */
 .social-proof {
     padding: var(--space-3xl) 0;
@@ -859,7 +859,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.05);
 }
 
-/* Numbers Bar ΓÇö Counters */
+/* Numbers Bar — Counters */
 .proof-numbers {
     display: flex;
     align-items: center;
@@ -1202,7 +1202,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pricing-disclaimers p::before {
-    content: 'ΓÇó';
+    content: '•';
     position: absolute;
     left: 0;
     color: var(--accent);
@@ -2355,7 +2355,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .feature-list li::before {
-    content: "Γ£ô";
+    content: "✓";
     position: absolute;
     left: 0;
     color: var(--accent);
