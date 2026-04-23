@@ -5,6 +5,13 @@
 
 /* --- CSS Custom Properties --- */
 :root {
+    /* Meaven Premium Hub Palette */
+    --lp-bg: #1A1A1B;           /* Deep Slate */
+    --lp-text: #F5F5F5;         /* Titanium White */
+    --lp-steel: #8E8E93;        /* Accent Steel */
+    --lp-border: rgba(142, 142, 147, 0.15);
+    --fw-header: 600;           /* Semi-bold */
+    --fw-body: 300;             /* Light */
     /* Core Palette â€” Rich Darks with Subtle Blue Undertones */
     --bg-primary: #08090a;
     --bg-secondary: #0c0d0f;
@@ -2153,6 +2160,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Mobile */
 @media (max-width: 768px) {
     :root {
+    /* Meaven Premium Hub Palette */
+    --lp-bg: #1A1A1B;           /* Deep Slate */
+    --lp-text: #F5F5F5;         /* Titanium White */
+    --lp-steel: #8E8E93;        /* Accent Steel */
+    --lp-border: rgba(142, 142, 147, 0.15);
+    --fw-header: 600;           /* Semi-bold */
+    --fw-body: 300;             /* Light */
         --space-3xl: 5rem;
     }
 
@@ -2898,3 +2912,4 @@ or: var(--text-secondary);
     color: rgba(255, 255, 255, 0.9);
     letter-spacing: -0.01em;
 }
+

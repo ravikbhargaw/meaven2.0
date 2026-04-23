@@ -15,135 +15,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Execution Without the Chaos — Meaven Operational Framework</title>
+    <title>Meaven Premium Hub — Execution Without the Chaos</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --slate: #1A1A1B;
+            --white: #F5F5F5;
+            --steel: #8E8E93;
+            --gold: #C9A55C;
+        }
+        body.premium-hub {
+            background-color: var(--slate);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-weight: 300; /* Light body */
+        }
+        .hub-header {
+            font-weight: 600; /* Semi-bold headers */
+            letter-spacing: -0.02em;
+        }
+        .borderless-list {
+            list-style: none;
+            padding: 0;
+        }
+        .borderless-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(142, 142, 147, 0.1);
+        }
+        .technical-icon {
+            width: 40px;
+            height: 40px;
+            stroke: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        .macro-shot {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 8px;
+            filter: saturate(0.5);
+            transition: 0.6s ease;
+        }
+        .macro-shot:hover {
+            filter: saturate(1);
+        }
+    </style>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="lp-body premium-hub">
 
-    <!-- Standard Navigation -->
-    <nav class="navbar scrolled" id="navbar">
+    <!-- Executive Navigation -->
+    <nav class="navbar scrolled">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
                 <img src="images/logo.png" alt="Meaven Designs" class="logo-img">
             </a>
-            <ul class="nav-links">
-                <li><a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20receive%20your%20Operational%20Framework%20PDF." class="footer-download-btn">Download Framework</a></li>
-            </ul>
+            <div class="nav-actions">
+                <a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20receive%20your%20Operational%20Framework%20PDF." 
+                   class="btn-text" data-track="framework-download-nav">Download Framework <span>↓</span></a>
+            </div>
         </div>
     </nav>
 
-    <!-- Section 1: Hero (Home Style) -->
-    <section class="hero" id="hero">
+    <!-- Agent 3: Hero Section — High Contrast & Focus -->
+    <section class="hero lp-hero" id="hero">
         <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" alt="Premium Glass Execution Hub" loading="eager">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" alt="Industrial Glass Execution" loading="eager">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
-            <div class="hero-badge animate-reveal">Premium Glass Execution Hub</div>
-            <h1 class="hero-headline animate-reveal">Execution Without <em>the Chaos.</em></h1>
-            <p class="hero-sub animate-reveal">A specialized glass execution partner for Bengaluru’s premium fit-outs, built to eliminate last-minute delays and site-level friction.</p>
+            <div class="hero-badge animate-reveal hub-header" style="color: var(--steel);">Execution over Product</div>
+            <h1 class="hero-headline animate-reveal hub-header">Execution Without <br><em>the Chaos.</em></h1>
+            <p class="hero-sub animate-reveal" style="font-weight: 300;">A specialized glass execution partner for Bengaluru’s premium fit-outs, built to eliminate last-minute delays and site-level friction.</p>
             <div class="hero-ctas animate-reveal">
-                <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20receive%20your%20Operational%20Framework%20PDF." class="btn btn-primary">Download Operational Framework</a>
-                <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20consult%20an%20Execution%20Expert." class="btn btn-secondary">Consult an Expert</a>
+                <a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20receive%20your%20Operational%20Framework%20PDF." 
+                   class="btn btn-primary" data-track="framework-download-hero">Download Operational Framework</a>
+                <a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20consult%20an%20Execution%20Expert." 
+                   class="btn btn-secondary" data-track="consult-expert-hero">Consult an Execution Expert</a>
             </div>
-        </div>
-        <div class="hero-scroll-indicator animate-reveal">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- Section 2: Meaven Intelligence (Why Style) -->
+    <!-- Agent 1 & 3: Meaven Intelligence Grid -->
     <section class="why-section" id="intelligence">
         <div class="container">
             <div class="section-header animate-reveal">
-                <span class="section-label">Meaven Intelligence</span>
-                <h2 class="section-title">Execution over<br>Product.</h2>
+                <span class="section-label hub-header">Meaven Intelligence</span>
+                <h2 class="section-title hub-header">Operational<br>Transparency.</h2>
             </div>
             <div class="why-grid">
                 <div class="why-card animate-reveal">
-                    <div class="why-icon">01</div>
-                    <h3>Precision Mapping</h3>
+                    <svg class="technical-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M5 12h14M12 5l7 7-7 7"/> <!-- Laser Line Placeholder -->
+                    </svg>
+                    <h3 class="hub-header">Precision Mapping</h3>
                     <p>Using laser-tech to ensure zero measurement errors. No site-level friction, guaranteed.</p>
                     <div class="card-accent"></div>
                 </div>
                 <div class="why-card animate-reveal">
-                    <div class="why-icon">02</div>
-                    <h3>Timeline Integrity</h3>
-                    <p>AI-driven lead tracking for guaranteed handovers. Know your move-in date with 100% certainty.</p>
+                    <svg class="technical-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/> <!-- Stopwatch Placeholder -->
+                    </svg>
+                    <h3 class="hub-header">Timeline Integrity</h3>
+                    <p>AI-driven lead tracking for guaranteed handovers. Real-time forecasting for busy executives.</p>
                     <div class="card-accent"></div>
                 </div>
                 <div class="why-card animate-reveal">
-                    <div class="why-icon">03</div>
-                    <h3>Operational Transparency</h3>
-                    <p>Real-time updates for project delivery teams. Zero "last-minute surprises."</p>
+                    <svg class="technical-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/> <!-- Dashboard Placeholder -->
+                    </svg>
+                    <h3 class="hub-header">Real-Time Transparency</h3>
+                    <p>Direct portal access for project delivery teams. Zero "last-minute surprises."</p>
                     <div class="card-accent"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 3: Comparison (Apple Style) -->
+    <!-- Agent 3: The Comparison Table — Borderless List -->
     <section class="lp-comparison">
         <div class="container">
             <div class="section-header text-center animate-reveal">
-                <span class="section-label">Anti-Headache</span>
-                <h2 class="section-title">The Cost of a Headache</h2>
+                <h2 class="section-title hub-header">Anti-Headache Policy</h2>
             </div>
             <div class="comparison-grid animate-reveal">
                 <div class="comp-card">
-                    <h4>Standard Vendor Friction</h4>
-                    <ul class="comp-list">
-                        <li class="comp-item">Manual measurements & tape errors</li>
-                        <li class="comp-item">Reactive communication ("Status checks")</li>
-                        <li class="comp-item">"Hidden" site costs & recut charges</li>
-                        <li class="comp-item">Delivery delays & site-level friction</li>
+                    <h4 class="hub-header" style="color: var(--steel);">Standard Vendor Friction</h4>
+                    <ul class="borderless-list">
+                        <li class="borderless-item">Manual measurements & tape errors</li>
+                        <li class="borderless-item">Reactive communication ("Status checks")</li>
+                        <li class="borderless-item">"Hidden" site costs & recut charges</li>
+                        <li class="borderless-item">Last-minute surprises & missed dates</li>
                     </ul>
                 </div>
                 <div class="comp-card premium">
-                    <h4>Meaven's Execution</h4>
-                    <ul class="comp-list">
-                        <li class="comp-item">Laser-tech mapping (Zero-error)</li>
-                        <li class="comp-item">Proactive status via client portal</li>
-                        <li class="comp-item">Transparent productized pricing</li>
-                        <li class="comp-item">100% On-time completion rate</li>
+                    <h4 class="hub-header" style="color: var(--gold);">Meaven's Execution</h4>
+                    <ul class="borderless-list">
+                        <li class="borderless-item">Laser-tech mapping (Zero-error policy)</li>
+                        <li class="borderless-item">Proactive status via executive portal</li>
+                        <li class="borderless-item">Transparent productized pricing</li>
+                        <li class="borderless-item">Guaranteed on-time completion</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 4: Strategic Projects (Mosaic Style) -->
+    <!-- Agent 3: Portfolio Teaser — Technical Macro-shots -->
     <section class="projects-section" id="strategic-projects">
         <div class="container">
             <div class="section-header animate-reveal">
-                <span class="section-label">Strategic Projects</span>
-                <h2 class="section-title">Portfolio Highlights</h2>
+                <span class="section-label hub-header">Strategic Projects</span>
+                <h2 class="section-title hub-header">Technical Precision</h2>
             </div>
             <div class="projects-grid">
                 <div class="project-card animate-reveal">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800" alt="Managed Office Interiors">
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800" alt="Hardware Detail Macro" class="macro-shot">
                     <div class="project-meta">
                         <div class="project-info">
-                            <h3>Corporate Fit-outs</h3>
-                            <p>Strategic Workspace</p>
+                            <h3 class="hub-header">Hardware Engineering</h3>
+                            <p>Premium Finish</p>
                         </div>
                     </div>
                 </div>
                 <div class="project-card animate-reveal">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800" alt="Premium Coworking">
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800" alt="Glass Edge Macro" class="macro-shot">
                     <div class="project-meta">
                         <div class="project-info">
-                            <h3>Coworking Hubs</h3>
-                            <p>Executive Glass</p>
+                            <h3 class="hub-header">Glass Precision</h3>
+                            <p>Polished Edges</p>
                         </div>
                     </div>
                 </div>
@@ -151,55 +194,42 @@
         </div>
     </section>
 
-    <!-- Section 5: Trust Bar -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid animate-reveal">
-                <div class="stat-item">
-                    <div class="stat-number" data-count="700">700k+</div>
-                    <div class="stat-label">Sq. Ft. Handover</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="100">100%</div>
-                    <div class="stat-label">On-time Completion</div>
-                </div>
-            </div>
-            <div class="client-grid animate-reveal" style="margin-top: 4rem;">
-                <img src="images/bloomworkspace.in logo11.webp" alt="Client Logo" class="client-logo">
-                <img src="images/brainchildtech.com logo10.webp" alt="Client Logo" class="client-logo">
-                <img src="images/brigadeplus.com logo9.svg" alt="Client Logo" class="client-logo">
-                <img src="images/obeya.in logo9.png" alt="Client Logo" class="client-logo">
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 6: Closing CTA -->
+    <!-- Agent 4: Final Integration Bar -->
     <section class="lp-final-cta">
         <div class="container">
             <div class="final-cta-block animate-reveal text-center">
-                <h2>Let’s protect your move-in date.</h2>
+                <h2 class="hub-header">Let’s protect your move-in date.</h2>
                 <p>High-stakes projects don't have room for execution friction. Partner with the team that owns the load.</p>
                 <div class="hero-ctas" style="justify-content: center;">
-                    <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I'd%20like%20to%20schedule%20a%2010-minute%20Operational%20Review." class="btn btn-primary">Schedule Operational Review</a>
+                    <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I'd%20like%20to%20schedule%20a%2010-minute%20Operational%20Review." 
+                       class="btn btn-primary" data-track="final-review-cta">Schedule Operational Review</a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="images/logo.png" alt="Meaven Designs" class="footer-logo">
-                    <p>Execution Hub — Bengaluru</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Meaven Designs. Internal Operational Framework.</p>
-            </div>
+        <div class="container text-center">
+            <p class="hub-header" style="opacity: 0.4;">&copy; 2024 Meaven Designs. Internal Operational Framework.</p>
+            <p style="opacity: 0.4; font-size: 0.75rem;">Execution Hub — Bengaluru</p>
         </div>
     </footer>
 
     <script src="main.js"></script>
+    <script>
+        // Agent 2: Logic & Tracking Implementation
+        document.querySelectorAll('[data-track]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const action = button.getAttribute('data-track');
+                console.log(`Tracking Event: ${action}`);
+                if (window.gtag) {
+                    gtag('event', 'click', {
+                        'event_category': 'B2B_Hub',
+                        'event_label': action
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
