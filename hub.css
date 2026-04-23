@@ -294,3 +294,65 @@ footer {
     filter: brightness(0);
 }
 
+
+/* Mosaic Portfolio Grid */
+.mosaic-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.mosaic-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.mosaic-item img, .mosaic-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.mosaic-item:hover img, .mosaic-item:hover video {
+    transform: scale(1.03);
+}
+
+/* Editorial Spanning */
+.span-8 { grid-column: span 8; aspect-ratio: 16/10; }
+.span-4 { grid-column: span 4; aspect-ratio: 10/12; } /* Portrait-friendly */
+.span-6 { grid-column: span 6; aspect-ratio: 1/1; }
+.span-12 { grid-column: span 12; aspect-ratio: 21/9; }
+
+.mosaic-label {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mosaic-item:hover .mosaic-label {
+    opacity: 1;
+}
+
+@media (max-width: 992px) {
+    .span-8, .span-4, .span-6, .span-12 {
+        grid-column: span 12;
+        aspect-ratio: auto;
+        height: 400px;
+    }
+}
