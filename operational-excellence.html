@@ -15,245 +15,236 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Execution Without the Chaos — Meaven Editorial</title>
+    <title>Meaven Execution Hub — Headache-less Execution</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .sticky-cta {
-            position: fixed;
-            bottom: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(201, 165, 92, 0.3);
-            padding: 0.75rem 2rem;
-            border-radius: 100px;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            transition: 0.6s cubic-bezier(0.2, 0, 0.2, 1);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-        .sticky-cta.visible {
-            bottom: 2rem;
-        }
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background: #000;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.3s;
-        }
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-    </style>
 </head>
-<body class="lp-editorial">
+<body class="gamma-body">
 
-    <!-- Minimalist Navigation -->
-    <nav class="navbar scrolled">
-        <div class="ed-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <!-- Minimal Header -->
+    <nav class="navbar scrolled" style="background: rgba(245, 245, 243, 0.9) !important; border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <div class="gamma-container" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; padding-bottom: 1rem;">
             <a href="index.html" class="nav-logo">
-                <img src="images/logo.png" alt="Meaven Designs - Premium Glass Execution" class="logo-img">
+                <img src="images/logo.png" alt="Meaven Designs" class="logo-img" style="filter: invert(1);">
             </a>
-            <a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20receive%20your%20Operational%20Framework%20PDF." 
-               class="btn-text" data-track="framework-download-nav">Download Framework <span>↓</span></a>
+            <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20request%20an%20Operational%20Review." class="gamma-btn-primary" style="padding: 0.5rem 1.5rem !important; font-size: 0.875rem;">Request Review</a>
         </div>
     </nav>
 
-    <!-- Editorial Hero -->
-    <section class="ed-hero">
-        <div class="ed-hero-text" style="padding-left: var(--space-xl);">
-            <span class="ed-label animate-reveal">B2B Operational Framework</span>
-            <h1 class="ed-hero-headline animate-reveal">Execution <br>Without <br><em>Chaos.</em></h1>
-            <div class="hero-ctas animate-reveal">
-                <a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20receive%20your%20Operational%20Framework%20PDF." 
-                   class="btn btn-primary" data-track="framework-download-hero">Download Framework</a>
+    <!-- Section 1: Hero -->
+    <section class="gamma-hero animate-reveal">
+        <div class="gamma-container">
+            <h1 class="gamma-headline">Execution Without <br>the Chaos.</h1>
+            <p class="gamma-subheadline">We eliminate site-level friction and last-minute delays in commercial glass fit-outs — so your project lands on time, every time.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20request%20an%20Operational%20Review." class="gamma-btn-primary">Request an Operational Review</a>
+                <a href="projects.html" class="gamma-btn-secondary">View Project Gallery</a>
             </div>
-        </div>
-        <div class="ed-hero-image animate-reveal">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" 
-                 alt="Cinematic wide shot of high-precision architectural glass in a modern office.">
-        </div>
-    </section>
-
-    <!-- Editorial Statement -->
-    <section class="ed-section">
-        <div class="ed-container">
-            <div class="ed-statement animate-reveal">
-                "Meaven provides a result: <em>high-precision glass execution</em> with zero last-minute surprises, zero site-level friction, and guaranteed timelines."
-            </div>
-            <p class="animate-reveal" style="max-width: 600px; color: rgba(255,255,255,0.5);">We are a specialized execution partner for Bengaluru’s premium fit-outs, built to eliminate the standard vendor friction that stalls handovers.</p>
-        </div>
-    </section>
-
-    <!-- Meaven Intelligence Mosaic -->
-    <section class="ed-section">
-        <div class="ed-container">
-            <div class="ed-mosaic">
-                <div class="ed-mosaic-item wide animate-reveal">
-                    <span class="ed-label">Intelligence 01</span>
-                    <h3>Precision Mapping</h3>
-                    <p>Using laser-tech to ensure zero measurement errors. No site-level friction, guaranteed.</p>
-                </div>
-                <div class="ed-mosaic-item narrow animate-reveal">
-                    <span class="ed-label">Intelligence 02</span>
-                    <h3>Timeline Integrity</h3>
-                    <p>AI-driven lead tracking for guaranteed handovers. Real-time forecasting for busy executives.</p>
-                </div>
-                <div class="ed-mosaic-item hero animate-reveal" title="Architectural precision backdrop">
-                    <!-- Panorama Background -->
-                </div>
-                <div class="ed-mosaic-item narrow animate-reveal" style="background: var(--accent); color: #000;">
-                    <span class="ed-label" style="color: #000;">Intelligence 03</span>
-                    <h3 style="color: #000;">Transparency</h3>
-                    <p style="color: rgba(0,0,0,0.7);">Real-time updates for project delivery teams. Zero surprises.</p>
-                </div>
-                <div class="ed-mosaic-item wide animate-reveal">
-                    <span class="ed-label">Expertise</span>
-                    <h3>High-Performance Systems</h3>
-                    <p>From acoustic partitions to turnkey site management. We own the execution load.</p>
-                </div>
+            <div style="margin-top: 4rem; border-radius: 12px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.1);">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" alt="Executive Workspace" style="width: 100%; display: block;">
             </div>
         </div>
     </section>
 
-    <!-- Editorial Comparison -->
-    <section class="ed-section" style="padding: 0;">
-        <div class="ed-comparison">
-            <div class="ed-comp-col animate-reveal">
-                <span class="ed-label">Industry Standard</span>
-                <div class="ed-comp-row">Manual measurements</div>
-                <div class="ed-comp-row">Reactive communication</div>
-                <div class="ed-comp-row">Hidden site costs</div>
-                <div class="ed-comp-row">Delivery delays</div>
+    <!-- Section 2: Comparison Table -->
+    <section class="animate-reveal" style="padding: var(--space-4xl) 0;">
+        <div class="gamma-container">
+            <div style="max-width: 800px; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">The Cost of a Headache</h2>
+                <p style="font-size: 1.125rem; color: rgba(0,0,0,0.6); line-height: 1.7;">Standard vendors don't fail on product — they fail on process. Manual measurement errors, fragmented communication, and reactive site management compound into delays that cost you money, credibility, and tenant relationships.</p>
             </div>
-            <div class="ed-comp-col highlight animate-reveal">
-                <span class="ed-label">Meaven Execution</span>
-                <div class="ed-comp-row" style="color: var(--accent);">Laser-tech mapping</div>
-                <div class="ed-comp-row" style="color: var(--accent);">Proactive status portal</div>
-                <div class="ed-comp-row" style="color: var(--accent);">Transparent pricing</div>
-                <div class="ed-comp-row" style="color: var(--accent);">100% On-time completion</div>
+            <div class="gamma-comparison-grid">
+                <div class="gamma-card" style="background: #fdfdfd;">
+                    <h3 style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: #ff4d4d; margin-bottom: 2rem;">The Standard Vendor 'Headache'</h3>
+                    <div class="gamma-comp-item">
+                        <h4>Manual Measurements</h4>
+                        <p>Leads to 11th-hour glass resizing and site delays that stall the entire handover.</p>
+                    </div>
+                    <div class="gamma-comp-item">
+                        <h4>Silent Delays</h4>
+                        <p>You find out about delivery issues on the day of the handover. No transparency on the supply chain.</p>
+                    </div>
+                    <div class="gamma-comp-item">
+                        <h4>Post-Project Friction</h4>
+                        <p>Long response times for snags and maintenance. No centralized record of installed hardware.</p>
+                    </div>
+                </div>
+                <div class="gamma-card" style="background: #FFFFFF; border-left: 4px solid #66B2C2;">
+                    <h3 style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: #66B2C2; margin-bottom: 2rem;">The Meaven 'No-Surprise' Execution</h3>
+                    <div class="gamma-comp-item">
+                        <h4>Laser-Precision Mapping</h4>
+                        <p>Tech-driven site audits for a 99% first-time fit rate. We measure twice with lasers, cut once with precision.</p>
+                    </div>
+                    <div class="gamma-comp-item">
+                        <h4>Proactive Milestone Tracking</h4>
+                        <p>AI-driven lead time forecasting with real-time status updates shared with your delivery team.</p>
+                    </div>
+                    <div class="gamma-comp-item">
+                        <h4>Digital Handover & Support</h4>
+                        <p>Instant access to warranty docs and 48-hour onsite snag resolution. Every hinge and seal is logged.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Mosaic Teaser -->
-    <section class="ed-section">
-        <div class="ed-container">
-            <div class="section-header animate-reveal">
-                <span class="section-label">Strategic Projects</span>
-                <h2 class="section-title">700k+ Sq. Ft. of <br>Seamless Handover.</h2>
+    <!-- Section 3: Technical Capabilities -->
+    <section class="animate-reveal" style="background: #FFFFFF; padding: var(--space-4xl) 0;">
+        <div class="gamma-container">
+            <div class="gamma-capabilities-grid">
+                <div class="gamma-card">
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Internal Glazing</h3>
+                    <p style="color: rgba(0,0,0,0.6);">High-performance glass systems used to define interior spaces while preserving light flow. They support flexible layouts and cleaner sightlines.</p>
+                </div>
+                <div class="gamma-card">
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Acoustic Solutions</h3>
+                    <p style="color: rgba(0,0,0,0.6);">Specialized systems designed to reduce sound transfer. They help create quieter, more productive environments without compromising design.</p>
+                </div>
+                <div class="gamma-card">
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Slim-Profile Framing</h3>
+                    <p style="color: rgba(0,0,0,0.6);">Minimal frame systems that maximize glass area. They deliver strong structural performance while keeping interiors bright.</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Our Operational Framework -->
+    <section class="animate-reveal" style="padding: var(--space-4xl) 0;">
+        <div class="gamma-container">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 4rem; text-align: center;">Our Operational Framework</h2>
+            <div class="gamma-capabilities-grid">
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📏</div>
+                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Precision Mapping</h4>
+                    <p style="color: rgba(0,0,0,0.6);">Digital site surveys and CAD-verified dimensions eliminate guesswork.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📅</div>
+                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Timeline Integrity</h4>
+                    <p style="color: rgba(0,0,0,0.6);">Milestone schedules shared in real time. Proactive flagging of constraints.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">💎</div>
+                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Premium Standards</h4>
+                    <p style="color: rgba(0,0,0,0.6);">Grade-certified glass systems and ironmongery. No substitutions on site.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: The MI Advantage -->
+    <section class="animate-reveal" style="background: #1A1A1A; color: #FFFFFF; padding: var(--space-4xl) 0;">
+        <div class="gamma-container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">The MI Advantage: Data-Backed Execution</h2>
+                <p style="font-size: 1.125rem; color: rgba(255,255,255,0.6);">Every project is powered by Meaven Intelligence (MI)—our proprietary vetting and sourcing engine.</p>
+            </div>
+            <div class="gamma-advantage-grid">
+                <div class="gamma-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #FFF;">
+                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Precision Sourcing</h4>
+                    <p style="color: rgba(255,255,255,0.6);">Automated supplier vetting across 40+ parameters.</p>
+                </div>
+                <div class="gamma-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #FFF;">
+                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Lead-Time Forecasting</h4>
+                    <p style="color: rgba(255,255,255,0.6);">AI-driven models that predict site-ready dates.</p>
+                </div>
+                <div class="gamma-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #FFF;">
+                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Cost Control</h4>
+                    <p style="color: rgba(255,255,255,0.6);">Eliminating hidden logistics and recut markups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Project Gallery -->
+    <section class="animate-reveal" style="padding: var(--space-4xl) 0;">
+        <div class="gamma-container">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 3rem;">Work That Speaks for Itself</h2>
             <div class="projects-grid">
-                <div class="project-card animate-reveal">
-                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800" 
-                         alt="Managed office ecosystem with premium glass partitions." class="macro-shot">
-                    <div class="project-meta">
-                        <div class="project-info">
-                            <h3>Corporate Fit-outs</h3>
-                            <p>Premium Execution</p>
-                        </div>
-                    </div>
+                <div class="project-card"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800" alt="Project"></div>
+                <div class="project-card"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800" alt="Project"></div>
+                <div class="project-card"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" alt="Project"></div>
+                <div class="project-card"><img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&q=80&w=800" alt="Project"></div>
+            </div>
+            <p style="margin-top: 2rem; color: rgba(0,0,0,0.5); font-style: italic;">Raw Site Reality: We don't use 3D renders... These are real sites, real handovers, and 100% delivered accuracy.</p>
+        </div>
+    </section>
+
+    <!-- Section 7: Final CTA -->
+    <section class="animate-reveal" style="background: #66B2C2; color: #FFFFFF; padding: var(--space-4xl) 0; text-align: center;">
+        <div class="gamma-container">
+            <h2 style="font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem;">Ready for Headache-less Execution?</h2>
+            <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 3rem; opacity: 0.9;">An Operational Review is a no-obligation conversation where we assess your project scope and identify potential execution risks.</p>
+            <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20request%20an%20Operational%20Review." class="gamma-btn-secondary" style="background: #FFFFFF; border: none; color: #66B2C2;">Request an Operational Review</a>
+        </div>
+    </section>
+
+    <!-- Section 8: What to Expect -->
+    <section class="animate-reveal" style="padding: var(--space-4xl) 0;">
+        <div class="gamma-container">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 4rem;">What to Expect</h2>
+            <div class="gamma-step">
+                <div class="gamma-step-num">01</div>
+                <div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Initial Brief</h4>
+                    <p style="color: rgba(0,0,0,0.6);">Share your project scope, floor plans, and required timelines.</p>
                 </div>
-                <div class="project-card animate-reveal">
-                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800" 
-                         alt="Executive workspace featuring acoustic glass solutions." class="macro-shot">
-                    <div class="project-meta">
-                        <div class="project-info">
-                            <h3>Coworking Spaces</h3>
-                            <p>Managed Integrity</p>
-                        </div>
-                    </div>
+            </div>
+            <div class="gamma-step">
+                <div class="gamma-step-num">02</div>
+                <div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Site Assessment</h4>
+                    <p style="color: rgba(0,0,0,0.6);">Our engineers perform a digital survey of the physical space using laser mapping.</p>
+                </div>
+            </div>
+            <div class="gamma-step">
+                <div class="gamma-step-num">03</div>
+                <div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Execution Proposal</h4>
+                    <p style="color: rgba(0,0,0,0.6);">A detailed plan with exact milestones, hardware schedules, and fixed pricing.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final Editorial CTA -->
-    <section class="ed-section" style="background: #050505;">
-        <div class="ed-container text-center animate-reveal">
-            <span class="ed-label">Next Steps</span>
-            <h2 class="ed-hero-headline" style="font-size: clamp(3rem, 6vw, 5rem);">Protect your <br>move-in date.</h2>
-            <div class="hero-ctas" style="justify-content: center; margin-top: var(--space-xl);">
-                <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I'd%20like%20to%20schedule%20a%2010-minute%20Operational%20Review." 
-                   class="btn btn-primary" data-track="final-review-cta">Schedule Operational Review</a>
+    <!-- Section 9: Technical Capabilities Grid -->
+    <section class="animate-reveal" style="background: #FFFFFF; padding: var(--space-4xl) 0;">
+        <div class="gamma-container">
+            <div class="gamma-capabilities-grid">
+                <div class="gamma-card"><h4>Internal Glass & Glazing</h4></div>
+                <div class="gamma-card"><h4>Slim-Profile Framing</h4></div>
+                <div class="gamma-card"><h4>Acoustic-Rated Solutions</h4></div>
+                <div class="gamma-card"><h4>High-Traffic Storefronts</h4></div>
+                <div class="gamma-card"><h4>Custom Glass Engineering</h4></div>
+                <div class="gamma-card"><h4>Turnkey Installation</h4></div>
             </div>
         </div>
     </section>
 
-    <!-- Sticky CTA Bar -->
-    <div class="sticky-cta" id="sticky-cta">
-        <span style="font-size: 0.8125rem; font-weight: 600; opacity: 0.7;">Execution Framework</span>
-        <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I'd%20like%20to%20receive%20your%20Operational%20Framework%20PDF." 
-           class="btn btn-primary" style="padding: 0.5rem 1.5rem;" data-track="framework-download-sticky">Download PDF</a>
-    </div>
-
-    <!-- Back to Top -->
-    <div class="back-to-top" id="back-to-top">↑</div>
-
-    <footer class="footer">
-        <div class="ed-container">
-            <div class="footer-bottom">
-                <p>&copy; 2024 Meaven Designs. B2B Operational Framework.</p>
-                <p>Bengaluru, India</p>
+    <!-- Section 10: Social Proof -->
+    <section class="animate-reveal" style="padding: var(--space-4xl) 0; border-top: 1px solid rgba(0,0,0,0.05);">
+        <div class="gamma-container">
+            <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 3rem; text-align: center; color: rgba(0,0,0,0.4);">Trusted by Bangalore's Leading Workspace Developers.</h2>
+            <div class="gamma-logo-grid">
+                <img src="images/bloomworkspace.in logo11.webp" alt="Client" style="height: 30px;">
+                <img src="images/brainchildtech.com logo10.webp" alt="Client" style="height: 30px;">
+                <img src="images/brigadeplus.com logo9.svg" alt="Client" style="height: 30px;">
+                <img src="images/obeya.in logo9.png" alt="Client" style="height: 30px;">
+                <img src="images/homelane.com logo9.svg" alt="Client" style="height: 30px;">
             </div>
+        </div>
+    </section>
+
+    <footer class="footer" style="background: #F5F5F3; color: #1A1A1A; border-top: 1px solid rgba(0,0,0,0.05);">
+        <div class="gamma-container" style="text-align: center;">
+            <p style="font-weight: 700; margin-bottom: 0.5rem;">Meaven Designs</p>
+            <p style="opacity: 0.5; font-size: 0.875rem;">Execution Hub — Bengaluru, India</p>
         </div>
     </footer>
 
     <script src="main.js"></script>
-    <script>
-        // --- Sticky CTA & Back to Top Logic ---
-        const stickyCta = document.getElementById('sticky-cta');
-        const btt = document.getElementById('back-to-top');
-        const hero = document.getElementById('hero');
-
-        window.addEventListener('scroll', () => {
-            const scrollPos = window.scrollY;
-            if (scrollPos > 600) {
-                stickyCta.classList.add('visible');
-                btt.classList.add('visible');
-            } else {
-                stickyCta.classList.remove('visible');
-                btt.classList.remove('visible');
-            }
-        });
-
-        btt.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // --- Event Tracking Logic ---
-        document.querySelectorAll('[data-track]').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const action = button.getAttribute('data-track');
-                if (window.gtag) {
-                    gtag('event', 'click', {
-                        'event_category': 'B2B_Hub',
-                        'event_label': action
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
