@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M041N6068W"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-M041N6068W');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
@@ -19,70 +8,67 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hub.css">
 </head>
-<body class="gamma-body">
+<body>
 
-    <!-- Minimal Header -->
-    <nav class="navbar scrolled" style="background: rgba(245, 245, 243, 0.9) !important; border-bottom: 1px solid rgba(0,0,0,0.05);">
-        <div class="gamma-container" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; padding-bottom: 1rem;">
-            <a href="index.html" class="nav-logo">
-                <img src="images/logo.png" alt="Meaven Designs" class="logo-img" style="filter: invert(1);">
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Meaven Logo" class="logo">
             </a>
-            <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20request%20an%20Operational%20Review." class="gamma-btn-primary" style="padding: 0.5rem 1.5rem !important; font-size: 0.875rem;">Request Review</a>
+            <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20request%20an%20Operational%20Review." class="btn btn-primary">Request Review</a>
         </div>
     </nav>
 
-    <!-- Section 1: Hero -->
-    <section class="gamma-hero animate-reveal">
-        <div class="gamma-container">
-            <h1 class="gamma-headline">Execution Without <br>the Chaos.</h1>
-            <p class="gamma-subheadline">We eliminate site-level friction and last-minute delays in commercial glass fit-outs — so your project lands on time, every time.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20request%20an%20Operational%20Review." class="gamma-btn-primary">Request an Operational Review</a>
-                <a href="projects.html" class="gamma-btn-secondary">View Project Gallery</a>
+    <section class="hero">
+        <div class="container">
+            <h1>Execution Without <br>the Chaos.</h1>
+            <p>We eliminate site-level friction and last-minute delays in commercial glass fit-outs — so your project lands on time, every time.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20request%20an%20Operational%20Review." class="btn btn-primary">Request an Operational Review</a>
+                <a href="projects.html" class="btn btn-secondary">View Project Gallery</a>
             </div>
-            <div style="margin-top: 4rem; border-radius: 12px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.1);">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" alt="Executive Workspace" style="width: 100%; display: block;">
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" alt="Meaven Workspace">
             </div>
         </div>
     </section>
 
-    <!-- Section 2: Comparison Table -->
-    <section class="animate-reveal" style="padding: var(--space-4xl) 0;">
-        <div class="gamma-container">
-            <div style="max-width: 800px; margin-bottom: 4rem;">
-                <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">The Cost of a Headache</h2>
-                <p style="font-size: 1.125rem; color: rgba(0,0,0,0.6); line-height: 1.7;">Standard vendors don't fail on product — they fail on process. Manual measurement errors, fragmented communication, and reactive site management compound into delays that cost you money, credibility, and tenant relationships.</p>
+    <section>
+        <div class="container">
+            <div class="comparison-header">
+                <h2>The Cost of a Headache</h2>
+                <p>Standard vendors don't fail on product — they fail on process. Manual measurement errors, fragmented communication, and reactive site management compound into delays that cost you money, credibility, and tenant relationships.</p>
             </div>
-            <div class="gamma-comparison-grid">
-                <div class="gamma-card" style="background: #fdfdfd;">
-                    <h3 style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: #ff4d4d; margin-bottom: 2rem;">The Standard Vendor 'Headache'</h3>
-                    <div class="gamma-comp-item">
+            <div class="comparison-grid">
+                <div class="comp-card">
+                    <span class="comp-tag" style="color: #ff4d4d;">The Standard Vendor 'Headache'</span>
+                    <div class="comp-item">
                         <h4>Manual Measurements</h4>
                         <p>Leads to 11th-hour glass resizing and site delays that stall the entire handover.</p>
                     </div>
-                    <div class="gamma-comp-item">
+                    <div class="comp-item">
                         <h4>Silent Delays</h4>
                         <p>You find out about delivery issues on the day of the handover. No transparency on the supply chain.</p>
                     </div>
-                    <div class="gamma-comp-item">
+                    <div class="comp-item">
                         <h4>Post-Project Friction</h4>
                         <p>Long response times for snags and maintenance. No centralized record of installed hardware.</p>
                     </div>
                 </div>
-                <div class="gamma-card" style="background: #FFFFFF; border-left: 4px solid #66B2C2;">
-                    <h3 style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: #66B2C2; margin-bottom: 2rem;">The Meaven 'No-Surprise' Execution</h3>
-                    <div class="gamma-comp-item">
+                <div class="comp-card" style="border-left: 4px solid var(--gamma-accent);">
+                    <span class="comp-tag" style="color: var(--gamma-accent);">The Meaven 'No-Surprise' Execution</span>
+                    <div class="comp-item">
                         <h4>Laser-Precision Mapping</h4>
                         <p>Tech-driven site audits for a 99% first-time fit rate. We measure twice with lasers, cut once with precision.</p>
                     </div>
-                    <div class="gamma-comp-item">
+                    <div class="comp-item">
                         <h4>Proactive Milestone Tracking</h4>
                         <p>AI-driven lead time forecasting with real-time status updates shared with your delivery team.</p>
                     </div>
-                    <div class="gamma-comp-item">
+                    <div class="comp-item">
                         <h4>Digital Handover & Support</h4>
                         <p>Instant access to warranty docs and 48-hour onsite snag resolution. Every hinge and seal is logged.</p>
                     </div>
@@ -91,160 +77,71 @@
         </div>
     </section>
 
-    <!-- Section 3: Technical Capabilities -->
-    <section class="animate-reveal" style="background: #FFFFFF; padding: var(--space-4xl) 0;">
-        <div class="gamma-container">
-            <div class="gamma-capabilities-grid">
-                <div class="gamma-card">
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Internal Glazing</h3>
-                    <p style="color: rgba(0,0,0,0.6);">High-performance glass systems used to define interior spaces while preserving light flow. They support flexible layouts and cleaner sightlines.</p>
+    <section style="background-color: var(--gamma-white);">
+        <div class="container">
+            <div class="grid-3">
+                <div class="capability-card">
+                    <h3>Internal Glazing</h3>
+                    <p>High-performance glass systems used to define interior spaces while preserving light flow. They support flexible layouts and cleaner sightlines.</p>
                 </div>
-                <div class="gamma-card">
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Acoustic Solutions</h3>
-                    <p style="color: rgba(0,0,0,0.6);">Specialized systems designed to reduce sound transfer. They help create quieter, more productive environments without compromising design.</p>
+                <div class="capability-card">
+                    <h3>Acoustic Solutions</h3>
+                    <p>Specialized systems designed to reduce sound transfer. They help create quieter, more productive environments without compromising design.</p>
                 </div>
-                <div class="gamma-card">
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Slim-Profile Framing</h3>
-                    <p style="color: rgba(0,0,0,0.6);">Minimal frame systems that maximize glass area. They deliver strong structural performance while keeping interiors bright.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: Our Operational Framework -->
-    <section class="animate-reveal" style="padding: var(--space-4xl) 0;">
-        <div class="gamma-container">
-            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 4rem; text-align: center;">Our Operational Framework</h2>
-            <div class="gamma-capabilities-grid">
-                <div style="text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 1rem;">📏</div>
-                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Precision Mapping</h4>
-                    <p style="color: rgba(0,0,0,0.6);">Digital site surveys and CAD-verified dimensions eliminate guesswork.</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 1rem;">📅</div>
-                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Timeline Integrity</h4>
-                    <p style="color: rgba(0,0,0,0.6);">Milestone schedules shared in real time. Proactive flagging of constraints.</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 1rem;">💎</div>
-                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Premium Standards</h4>
-                    <p style="color: rgba(0,0,0,0.6);">Grade-certified glass systems and ironmongery. No substitutions on site.</p>
+                <div class="capability-card">
+                    <h3>Slim-Profile Framing</h3>
+                    <p>Minimal frame systems that maximize glass area. They deliver strong structural performance while keeping interiors bright.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 5: The MI Advantage -->
-    <section class="animate-reveal" style="background: #1A1A1A; color: #FFFFFF; padding: var(--space-4xl) 0;">
-        <div class="gamma-container">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
-                <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">The MI Advantage: Data-Backed Execution</h2>
-                <p style="font-size: 1.125rem; color: rgba(255,255,255,0.6);">Every project is powered by Meaven Intelligence (MI)—our proprietary vetting and sourcing engine.</p>
+    <section class="dark-section">
+        <div class="container" style="text-align: center;">
+            <div style="max-width: 800px; margin: 0 auto 4rem;">
+                <h2>The MI Advantage: Data-Backed Execution</h2>
+                <p>At Meaven, we don't rely on manual guesswork. Every project is powered by Meaven Intelligence (MI)—our proprietary vetting and sourcing engine.</p>
             </div>
-            <div class="gamma-advantage-grid">
-                <div class="gamma-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #FFF;">
-                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Precision Sourcing</h4>
-                    <p style="color: rgba(255,255,255,0.6);">Automated supplier vetting across 40+ parameters.</p>
+            <div class="grid-3" style="text-align: left;">
+                <div class="capability-card">
+                    <h4 style="margin-bottom: 1rem;">Precision Sourcing</h4>
+                    <p>Automated supplier vetting across 40+ parameters.</p>
                 </div>
-                <div class="gamma-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #FFF;">
-                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Lead-Time Forecasting</h4>
-                    <p style="color: rgba(255,255,255,0.6);">AI-driven models that predict site-ready dates.</p>
+                <div class="capability-card">
+                    <h4 style="margin-bottom: 1rem;">Lead-Time Forecasting</h4>
+                    <p>AI-driven models that predict site-ready dates.</p>
                 </div>
-                <div class="gamma-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #FFF;">
-                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Cost Control</h4>
-                    <p style="color: rgba(255,255,255,0.6);">Eliminating hidden logistics and recut markups.</p>
+                <div class="capability-card">
+                    <h4 style="margin-bottom: 1rem;">Cost Control</h4>
+                    <p>Eliminating hidden logistics and recut markups.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 6: Project Gallery -->
-    <section class="animate-reveal" style="padding: var(--space-4xl) 0;">
-        <div class="gamma-container">
-            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 3rem;">Work That Speaks for Itself</h2>
-            <div class="projects-grid">
-                <div class="project-card"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800" alt="Project"></div>
-                <div class="project-card"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800" alt="Project"></div>
-                <div class="project-card"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" alt="Project"></div>
-                <div class="project-card"><img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&q=80&w=800" alt="Project"></div>
+    <section>
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">Work That Speaks for Itself</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800" alt="Work"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800" alt="Work"></div>
             </div>
-            <p style="margin-top: 2rem; color: rgba(0,0,0,0.5); font-style: italic;">Raw Site Reality: We don't use 3D renders... These are real sites, real handovers, and 100% delivered accuracy.</p>
+            <p style="margin-top: 2rem; opacity: 0.5; font-style: italic;">Raw Site Reality: We don't use 3D renders. These are real sites, real handovers, and 100% delivered accuracy.</p>
         </div>
     </section>
 
-    <!-- Section 7: Final CTA -->
-    <section class="animate-reveal" style="background: #66B2C2; color: #FFFFFF; padding: var(--space-4xl) 0; text-align: center;">
-        <div class="gamma-container">
-            <h2 style="font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem;">Ready for Headache-less Execution?</h2>
+    <section style="background-color: var(--gamma-accent); color: var(--gamma-white); text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Ready for Headache-less Execution?</h2>
             <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 3rem; opacity: 0.9;">An Operational Review is a no-obligation conversation where we assess your project scope and identify potential execution risks.</p>
-            <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20request%20an%20Operational%20Review." class="gamma-btn-secondary" style="background: #FFFFFF; border: none; color: #66B2C2;">Request an Operational Review</a>
+            <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20request%20an%20Operational%20Review." class="btn btn-secondary" style="background: white; border: none; color: var(--gamma-accent);">Request an Operational Review</a>
         </div>
     </section>
 
-    <!-- Section 8: What to Expect -->
-    <section class="animate-reveal" style="padding: var(--space-4xl) 0;">
-        <div class="gamma-container">
-            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 4rem;">What to Expect</h2>
-            <div class="gamma-step">
-                <div class="gamma-step-num">01</div>
-                <div>
-                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Initial Brief</h4>
-                    <p style="color: rgba(0,0,0,0.6);">Share your project scope, floor plans, and required timelines.</p>
-                </div>
-            </div>
-            <div class="gamma-step">
-                <div class="gamma-step-num">02</div>
-                <div>
-                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Site Assessment</h4>
-                    <p style="color: rgba(0,0,0,0.6);">Our engineers perform a digital survey of the physical space using laser mapping.</p>
-                </div>
-            </div>
-            <div class="gamma-step">
-                <div class="gamma-step-num">03</div>
-                <div>
-                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Execution Proposal</h4>
-                    <p style="color: rgba(0,0,0,0.6);">A detailed plan with exact milestones, hardware schedules, and fixed pricing.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 9: Technical Capabilities Grid -->
-    <section class="animate-reveal" style="background: #FFFFFF; padding: var(--space-4xl) 0;">
-        <div class="gamma-container">
-            <div class="gamma-capabilities-grid">
-                <div class="gamma-card"><h4>Internal Glass & Glazing</h4></div>
-                <div class="gamma-card"><h4>Slim-Profile Framing</h4></div>
-                <div class="gamma-card"><h4>Acoustic-Rated Solutions</h4></div>
-                <div class="gamma-card"><h4>High-Traffic Storefronts</h4></div>
-                <div class="gamma-card"><h4>Custom Glass Engineering</h4></div>
-                <div class="gamma-card"><h4>Turnkey Installation</h4></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 10: Social Proof -->
-    <section class="animate-reveal" style="padding: var(--space-4xl) 0; border-top: 1px solid rgba(0,0,0,0.05);">
-        <div class="gamma-container">
-            <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 3rem; text-align: center; color: rgba(0,0,0,0.4);">Trusted by Bangalore's Leading Workspace Developers.</h2>
-            <div class="gamma-logo-grid">
-                <img src="images/bloomworkspace.in logo11.webp" alt="Client" style="height: 30px;">
-                <img src="images/brainchildtech.com logo10.webp" alt="Client" style="height: 30px;">
-                <img src="images/brigadeplus.com logo9.svg" alt="Client" style="height: 30px;">
-                <img src="images/obeya.in logo9.png" alt="Client" style="height: 30px;">
-                <img src="images/homelane.com logo9.svg" alt="Client" style="height: 30px;">
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer" style="background: #F5F5F3; color: #1A1A1A; border-top: 1px solid rgba(0,0,0,0.05);">
-        <div class="gamma-container" style="text-align: center;">
-            <p style="font-weight: 700; margin-bottom: 0.5rem;">Meaven Designs</p>
-            <p style="opacity: 0.5; font-size: 0.875rem;">Execution Hub — Bengaluru, India</p>
-        </div>
+    <footer class="container">
+        <p style="font-weight: 800; margin-bottom: 0.5rem;">Meaven Designs</p>
+        <p style="opacity: 0.5; font-size: 0.875rem;">Execution Hub — Bengaluru, India</p>
     </footer>
 
-    <script src="main.js"></script>
 </body>
 </html>

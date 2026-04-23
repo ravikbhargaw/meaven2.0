@@ -3069,13 +3069,31 @@ or: var(--text-secondary);
     .ed-hero-image { height: 400px; }
 }
 
+
 /* ========================================
    GAMMA SITE REPRODUCTION — Meaven Execution Hub
    ======================================== */
-.gamma-body {
-    background-color: #F5F5F3;
-    color: #1A1A1A;
-    font-family: 'Inter', sans-serif;
+body.gamma-body {
+    background-color: #F5F5F3 !important;
+    color: #1A1A1A !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+body.gamma-body .navbar {
+    background: rgba(245, 245, 243, 0.9) !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+body.gamma-body .navbar .nav-logo img {
+    filter: invert(1) !important;
+}
+
+body.gamma-body .navbar .nav-links li a {
+    color: #1A1A1A !important;
+}
+
+body.gamma-body section {
+    background: transparent !important;
 }
 
 .gamma-container {
@@ -3093,6 +3111,7 @@ or: var(--text-secondary);
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
+    border: none !important;
 }
 
 .gamma-btn-primary:hover {
@@ -3102,6 +3121,7 @@ or: var(--text-secondary);
 
 .gamma-btn-secondary {
     border: 1px solid #1A1A1A !important;
+    background: transparent !important;
     color: #1A1A1A !important;
     padding: 1rem 2rem !important;
     border-radius: 8px !important;
@@ -3112,18 +3132,23 @@ or: var(--text-secondary);
 }
 
 .gamma-card {
-    background: #FFFFFF;
-    border: 1px solid rgba(0,0,0,0.05);
-    padding: var(--space-xl);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    background: #FFFFFF !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    padding: var(--space-xl) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03) !important;
     height: 100%;
     transition: 0.3s;
+    color: #1A1A1A !important;
+}
+
+.gamma-card h3, .gamma-card h4, .gamma-card p {
+    color: #1A1A1A !important;
 }
 
 .gamma-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
 }
 
 .gamma-hero {
@@ -3137,11 +3162,12 @@ or: var(--text-secondary);
     line-height: 1.1;
     margin-bottom: var(--space-lg);
     letter-spacing: -0.02em;
+    color: #1A1A1A !important;
 }
 
 .gamma-subheadline {
     font-size: 1.25rem;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0,0,0,0.6) !important;
     max-width: 700px;
     margin: 0 auto var(--space-xl);
     line-height: 1.6;
@@ -3162,10 +3188,11 @@ or: var(--text-secondary);
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    color: #1A1A1A !important;
 }
 
 .gamma-comp-item p {
-    color: rgba(0,0,0,0.6);
+    color: rgba(0,0,0,0.6) !important;
     line-height: 1.5;
 }
 
@@ -3188,12 +3215,13 @@ or: var(--text-secondary);
     border-top: 1px solid rgba(0,0,0,0.1);
     display: flex;
     gap: 2rem;
+    color: #1A1A1A !important;
 }
 
 .gamma-step-num {
     font-size: 1.5rem;
     font-weight: 800;
-    color: #66B2C2;
+    color: #66B2C2 !important;
 }
 
 .gamma-logo-grid {
@@ -3206,12 +3234,13 @@ or: var(--text-secondary);
     margin-top: var(--space-2xl);
 }
 
-@media (max-width: 992px) {
-    .gamma-comparison-grid, .gamma-capabilities-grid, .gamma-advantage-grid {
-        grid-template-columns: 1fr;
-    }
-    .gamma-step {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+body.gamma-body footer.footer {
+    background: #F5F5F3 !important;
+    color: #1A1A1A !important;
+    border-top: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+body.gamma-body .animate-reveal {
+    opacity: 1 !important;
+    transform: none !important;
 }
