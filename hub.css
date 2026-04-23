@@ -8,6 +8,15 @@
     --gamma-text: #1A1A1A;
     --gamma-accent: #66B2C2;
     --gamma-white: #FFFFFF;
+    --gamma-border: rgba(0,0,0,0.08);
+}
+
+body.dark-mode {
+    --gamma-bg: #0A0A0B;
+    --gamma-text: #F5F5F5;
+    --gamma-accent: #66B2C2;
+    --gamma-white: #1A1A1B;
+    --gamma-border: rgba(255,255,255,0.1);
 }
 
 * {
@@ -22,6 +31,7 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .container {
@@ -258,4 +268,65 @@ footer {
     .grid-4 {
         grid-template-columns: 1fr;
     }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 1.5px solid var(--gamma-text);
+    color: var(--gamma-text);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--gamma-text);
+    color: var(--gamma-bg);
+}
+
+/* Premium Logo Size */
+.logo {
+    height: 44px;
+    filter: invert(1);
+}
+body.dark-mode .logo {
+    filter: invert(0);
+}
+
+/* Refined Premium Cards (Editorial Style) */
+.capability-card, .comp-card {
+    background: transparent !important;
+    border: none !important;
+    border-left: 1px solid var(--gamma-border) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 2rem 0 2rem 2.5rem !important;
+    height: auto !important;
+}
+
+.capability-card:hover {
+    border-left-color: var(--gamma-accent) !important;
+    transform: none !important;
+}
+
+.grid-3, .grid-4 {
+    border-top: 1px solid var(--gamma-border);
+    margin-top: 2rem;
+}
+
+/* Logo Visibility Fix */
+.client-logo {
+    height: 32px;
+    transition: filter 0.4s ease;
+}
+body:not(.dark-mode) .client-logo {
+    filter: brightness(0);
+}
+body.dark-mode .client-logo {
+    filter: brightness(0) invert(1);
 }

@@ -11,14 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="hub.css">
 </head>
-<body>
+<body id="hub-body">
 
     <nav>
         <div class="container nav-content">
             <a href="index.html">
                 <img src="images/logo.png" alt="Meaven Logo" class="logo">
             </a>
-            <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20request%20an%20Operational%20Review." class="btn btn-primary">Request Review</a>
+            <div style="display: flex; align-items: center;">
+                <button class="theme-toggle" id="theme-toggle">DARK MODE</button>
+                <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20request%20an%20Operational%20Review." class="btn btn-primary">Request Review</a>
+            </div>
         </div>
     </nav>
 
@@ -62,7 +65,7 @@
                         <p>Long response times for snags and maintenance. No centralized record of installed hardware.</p>
                     </div>
                 </div>
-                <div class="comp-card" style="border-left: 4px solid var(--gamma-accent);">
+                <div class="comp-card" style="border-left-color: var(--gamma-accent) !important;">
                     <span class="comp-tag" style="color: var(--gamma-accent);">The Meaven 'No-Surprise' Execution</span>
                     <div class="comp-item">
                         <h4>Laser-Precision Mapping</h4>
@@ -85,7 +88,7 @@
         </div>
     </section>
 
-    <section style="background-color: var(--gamma-white);">
+    <section>
         <div class="container">
             <h2 style="margin-bottom: 3rem;">Technical Capabilities</h2>
             <div class="grid-3">
@@ -110,23 +113,23 @@
             <h2>Our Operational Framework</h2>
             <p class="subheadline">Three pillars engineered to remove chaos at every stage of a commercial glass fit-out — from first survey to final sign-off.</p>
             <div class="grid-3">
-                <div class="comp-item">
-                    <h4>Precision Mapping</h4>
+                <div class="capability-card">
+                    <h3>Precision Mapping</h3>
                     <p>Digital site surveys and CAD-verified dimensions eliminate guesswork before a single pane is ordered. What's specified is what gets made.</p>
                 </div>
-                <div class="comp-item">
-                    <h4>Timeline Integrity</h4>
+                <div class="capability-card">
+                    <h3>Timeline Integrity</h3>
                     <p>Every project runs on a milestone schedule shared in real time. Proactive flagging of constraints — not last-minute escalations — keeps your handover date intact.</p>
                 </div>
-                <div class="comp-item">
-                    <h4>Premium Hardware Standards</h4>
+                <div class="capability-card">
+                    <h3>Premium Hardware Standards</h3>
                     <p>We specify and source only grade-certified glass systems and ironmongery — no substitutions on site, no compromises that come back as warranty claims.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="dark-section">
+    <section class="dark-section" style="padding: 8rem 0;">
         <div class="container" style="text-align: center;">
             <div style="max-width: 800px; margin: 0 auto 4rem;">
                 <h2>The MI Advantage: Data-Backed Execution</h2>
@@ -134,15 +137,15 @@
             </div>
             <div class="grid-3" style="text-align: left;">
                 <div class="capability-card">
-                    <h4 style="margin-bottom: 1rem;">Precision Sourcing</h4>
+                    <h4>Precision Sourcing</h4>
                     <p>Automated supplier vetting across 40+ parameters.</p>
                 </div>
                 <div class="capability-card">
-                    <h4 style="margin-bottom: 1rem;">Lead-Time Forecasting</h4>
+                    <h4>Lead-Time Forecasting</h4>
                     <p>AI-driven models that predict site-ready dates.</p>
                 </div>
                 <div class="capability-card">
-                    <h4 style="margin-bottom: 1rem;">Cost Control</h4>
+                    <h4>Cost Control</h4>
                     <p>Eliminating hidden logistics and recut markups.</p>
                 </div>
             </div>
@@ -161,50 +164,52 @@
         </div>
     </section>
 
-    <section style="background-color: var(--gamma-white);">
+    <section>
         <div class="container">
             <h2>Technical Capabilities & Packages</h2>
             <p class="subheadline">Meaven is specialized for high-stakes, high-design commercial environments. Our core capabilities include:</p>
             <div class="grid-4">
-                <div>
-                    <h4>1. Internal Glass & Glazing</h4>
-                    <p style="color: rgba(0,0,0,0.6);">Full-scale fit-out packages for enterprise offices.</p>
+                <div class="capability-card">
+                    <h3>1. Internal Glass</h3>
+                    <p>Full-scale fit-out packages for enterprise offices.</p>
                 </div>
-                <div>
-                    <h4>2. Slim-Profile Framing</h4>
-                    <p style="color: rgba(0,0,0,0.6);">Minimalist aluminum systems for a seamless architectural look.</p>
+                <div class="capability-card">
+                    <h3>2. Slim-Profile</h3>
+                    <p>Minimalist aluminum systems for a seamless architectural look.</p>
                 </div>
-                <div>
-                    <h4>3. Acoustic-Rated Solutions</h4>
-                    <p style="color: rgba(0,0,0,0.6);">High-performance glass partitions (up to 42dB) for private cabins and conference rooms.</p>
+                <div class="capability-card">
+                    <h3>3. Acoustic-Rated</h3>
+                    <p>High-performance glass partitions (up to 42dB) for private cabins and conference rooms.</p>
                 </div>
-                <div>
-                    <h4>4. High-Traffic Storefronts</h4>
-                    <p style="color: rgba(0,0,0,0.6);">Durable, high-spec glass systems for retail and common areas.</p>
+                <div class="capability-card">
+                    <h3>4. High-Traffic</h3>
+                    <p>Durable, high-spec glass systems for retail and common areas.</p>
                 </div>
             </div>
-            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.1);">
-                <h4>Custom Glass Engineering</h4>
-                <p style="color: rgba(0,0,0,0.6);">Oversized panels, smart glass integration, and specialized hardware.</p>
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--gamma-border);">
+                <div class="capability-card" style="padding-left: 0 !important; border-left: none !important;">
+                    <h3>Custom Glass Engineering</h3>
+                    <p>Oversized panels, smart glass integration, and specialized hardware.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section style="border-top: 1px solid rgba(0,0,0,0.05);">
+    <section style="border-top: 1px solid var(--gamma-border);">
         <div class="container">
-            <h2 style="margin-bottom: 3rem; text-align: center;">Trusted by Bangalore's Leading Workspace Developers.</h2>
-            <div style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; filter: grayscale(1); opacity: 0.4;">
-                <img src="images/bloomworkspace.in logo11.webp" alt="Bloom" style="height: 32px;">
-                <img src="images/brainchildtech.com logo10.webp" alt="Brainchild" style="height: 32px;">
-                <img src="images/brigadeplus.com logo9.svg" alt="Brigade" style="height: 32px;">
-                <img src="images/flipspaces.com logo9.png" alt="Flipspaces" style="height: 32px;">
-                <img src="images/homelane.com logo9.svg" alt="HomeLane" style="height: 32px;">
-                <img src="images/obeya.in logo9.png" alt="Obeya" style="height: 32px;">
+            <h2 style="margin-bottom: 4rem; text-align: center;">Trusted by Bangalore's Leading Workspace Developers.</h2>
+            <div style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;">
+                <img src="images/bloomworkspace.in logo11.webp" alt="Bloom" class="client-logo">
+                <img src="images/brainchildtech.com logo10.webp" alt="Brainchild" class="client-logo">
+                <img src="images/brigadeplus.com logo9.svg" alt="Brigade" class="client-logo">
+                <img src="images/flipspaces.com logo9.png" alt="Flipspaces" class="client-logo">
+                <img src="images/homelane.com logo9.svg" alt="HomeLane" class="client-logo">
+                <img src="images/obeya.in logo9.png" alt="Obeya" class="client-logo">
             </div>
         </div>
     </section>
 
-    <section style="background-color: var(--gamma-accent); color: var(--gamma-white); text-align: center;">
+    <section style="background-color: var(--gamma-accent); color: white; text-align: center;">
         <div class="container">
             <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Ready for Headache-less Execution?</h2>
             <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 3rem; opacity: 0.9;">An Operational Review is a no-obligation conversation where we assess your project scope and identify potential execution risks.</p>
@@ -217,5 +222,15 @@
         <p style="opacity: 0.5; font-size: 0.875rem;">Execution Hub — Bengaluru, India</p>
     </footer>
 
+    <script>
+        const body = document.getElementById('hub-body');
+        const themeToggle = document.getElementById('theme-toggle');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            themeToggle.innerText = isDark ? 'LIGHT MODE' : 'DARK MODE';
+        });
+    </script>
 </body>
 </html>
