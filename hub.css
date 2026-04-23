@@ -1,4 +1,4 @@
-﻿/* 
+/* 
    MEAVEN HUB  1:1 GAMMA CLONE 
    Isolated from main site styles to ensure 100% fidelity.
 */
@@ -18,11 +18,12 @@
 }
 
 body {
-    background-color: var(--gamma-bg);
+    background-color: #F5F5F3 !important;
     color: var(--gamma-text);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
 }
 
 .container {
