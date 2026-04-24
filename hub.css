@@ -315,6 +315,7 @@ footer {
     box-shadow: 0 4px 20px rgba(0,0,0,0.03);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     min-height: 300px;
+    margin-bottom: 3rem; /* Forced Vertical Gap */
 }
 
 .mosaic-item:hover {
@@ -379,9 +380,14 @@ footer {
 }
 
 @media (max-width: 992px) {
+    .mosaic-grid {
+        column-gap: 0;
+        row-gap: 3rem;
+    }
     .span-8, .span-4, .span-6, .span-12 {
         grid-column: span 12;
         aspect-ratio: auto;
-        height: 400px;
+        height: 450px;
+        margin-bottom: 3rem; /* Extra safety for mobile stacking */
     }
 }
