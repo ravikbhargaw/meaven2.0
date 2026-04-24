@@ -1,8 +1,8 @@
 import os
 import datetime
-import re
 import json
 import urllib.request
+import re
 from pathlib import Path
 
 # --- Configuration ---
@@ -16,57 +16,64 @@ def generate_blog_content():
         print("ERROR: GEMINI_API_KEY is not set.")
         exit(1)
 
-    # Auto-discovery: List available models first
-    list_url = f"https://generativelanguage.googleapis.com/v1/models?key={GEMINI_API_KEY.strip()}"
-    model_name = "models/gemini-pro" # Default
+    # We prefer Gemini 1.5 Flash for speed and strict JSON support
+    model_name = "models/gemini-1.5-flash"
     
+    # Fail-safe: Verify model availability or fallback
     try:
+        list_url = f"https://generativelanguage.googleapis.com/v1beta/models?key={GEMINI_API_KEY.strip()}"
         with urllib.request.urlopen(list_url) as response:
             models_data = json.loads(response.read().decode('utf-8'))
-            model_names = [m['name'] for m in models_data.get('models', []) if 'generateContent' in m.get('supportedGenerationMethods', [])]
-            if model_names:
-                model_name = model_names[0] # Use the first available model
-                print(f"Auto-discovered model: {model_name}")
+            available_models = [m['name'] for m in models_data.get('models', []) if 'generateContent' in m.get('supportedGenerationMethods', [])]
+            if model_name not in available_models and available_models:
+                model_name = available_models[0]
+                print(f"Fallback: Using discovered model {model_name}")
     except Exception as e:
-        print(f"Discovery Warning: {str(e)}. Falling back to default.")
+        print(f"Discovery Warning: {e}. Attempting default {model_name}")
 
-    url = f"https://generativelanguage.googleapis.com/v1/{model_name}:generateContent?key={GEMINI_API_KEY.strip()}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/{model_name}:generateContent?key={GEMINI_API_KEY.strip()}"
     
     prompt = """
     Write a high-quality, professional B2B blog post for 'Meaven Designs' (Bangalore office partitions).
-    Tone: Premium, technical, architectural.
+    Tone: Premium, technical, architectural. Focus on topics like glass trends, acoustic privacy, or workplace execution in Bangalore.
     
-    Return STRICTLY ONLY JSON:
-    {
-        "title": "SEO Title",
-        "category": "Trends",
-        "meta_description": "160 chars",
-        "lead_text": "Intro paragraph",
-        "content_html": "Article body with <h2> and <p>",
-        "slug": "url-slug",
-        "image_keywords": "office glass"
-    }
+    Output strictly a JSON object with exactly these keys: "title", "category", "meta_description", "lead_text", "content_html", "slug", "image_keywords".
+    Make the "content_html" a string containing <h2> and <p> tags only.
+    Make the "slug" a URL-friendly version of the title.
     """
     
+    # Use native JSON mode if using 1.5 models, otherwise fallback to text
+    is_modern = "1.5" in model_name
     data = {
         "contents": [{
             "parts": [{"text": prompt}]
         }]
     }
     
-    req = urllib.request.Request(url, data=json.dumps(data).encode('utf-8'), headers={'Content-Type': 'application/json'})
+    if is_modern:
+        data["generationConfig"] = {"responseMimeType": "application/json"}
+
+    req = urllib.request.Request(
+        url, 
+        data=json.dumps(data).encode('utf-8'), 
+        headers={'Content-Type': 'application/json'}
+    )
     
     try:
         with urllib.request.urlopen(req) as response:
             res_data = json.loads(response.read().decode('utf-8'))
             text = res_data['candidates'][0]['content']['parts'][0]['text']
             
-            # Extract JSON
-            match = re.search(r'\{.*\}', text, re.DOTALL)
-            if not match:
-                print(f"Error: No JSON in AI response: {text}")
-                exit(1)
-            return json.loads(match.group(0))
+            # If not in JSON mode, extract JSON from text
+            if not is_modern:
+                match = re.search(r'\{.*\}', text, re.DOTALL)
+                if match:
+                    return json.loads(match.group(0))
+                else:
+                    raise Exception("No JSON found in AI response")
+            
+            return json.loads(text)
+            
     except urllib.error.HTTPError as e:
         print(f"HTTP Error: {e.code} {e.reason}")
         print(f"Response Body: {e.read().decode('utf-8')}")
@@ -82,6 +89,7 @@ def update_insights_index(post_data, image_url):
         
         today = datetime.date.today().strftime("%B %d, %Y")
         
+        # EXACT visual layout as original to ensure NO look/feel change
         new_card = f"""
                 <!-- Article -->
                 <article class="insight-card animate-reveal">
@@ -142,9 +150,12 @@ def create_blog_page(post_data, image_url):
 if __name__ == "__main__":
     print(f"Starting blog generation at {datetime.datetime.now()}")
     data = generate_blog_content()
+    
+    # Stable architectural image
     img_url = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200"
     
     print(f"Generated: {data['title']}")
     create_blog_page(data, img_url)
     update_insights_index(data, img_url)
     print("Success! Post created and index updated.")
+
