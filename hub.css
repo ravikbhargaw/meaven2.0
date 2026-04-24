@@ -17,6 +17,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #F5F5F3 !important;
     color: var(--gamma-text);
