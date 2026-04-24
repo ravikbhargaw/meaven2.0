@@ -246,7 +246,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1.25rem;
-    padding: 4rem 0 6rem;
+    padding: 1rem 0 6rem;
 }
 
 .mosaic-item {
