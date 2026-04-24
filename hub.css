@@ -297,26 +297,30 @@ footer {
 
 
 /* Mosaic Portfolio Grid */
+/* Mosaic Portfolio Grid */
 .mosaic-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 2rem;
+    column-gap: 2.5rem; /* 40px Gap */
+    row-gap: 3rem;    /* 48px Gap between rows */
     margin-top: 4rem;
 }
 
 .mosaic-item {
     position: relative;
-    border-radius: 16px;
+    border-radius: 20px; /* Even softer for premium feel */
     overflow: hidden;
-    background: #eee;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06); /* Subtle boundary */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     min-height: 300px;
 }
 
 .mosaic-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: var(--gamma-accent); /* Accent border on hover */
 }
 
 .mosaic-item img, .mosaic-item video {
@@ -324,37 +328,33 @@ footer {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.6s ease;
+    transition: transform 1.2s cubic-bezier(0.1, 0, 0.1, 1);
 }
 
 .mosaic-item:hover img, .mosaic-item:hover video {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
-/* Editorial Spanning with Fallbacks */
-.mosaic-item {
-    min-height: 300px; /* Prevents collapsing */
-}
-
+/* Editorial Spanning */
 .span-8 { 
     grid-column: span 8; 
     aspect-ratio: 16/10;
-    min-height: 450px;
+    min-height: 480px;
 }
 .span-4 { 
     grid-column: span 4; 
-    aspect-ratio: 10/12;
-    min-height: 450px;
+    aspect-ratio: 9/12;
+    min-height: 480px;
 }
 .span-6 { 
     grid-column: span 6; 
     aspect-ratio: 1/1;
-    min-height: 400px;
+    min-height: 420px;
 }
 .span-12 { 
     grid-column: span 12; 
     aspect-ratio: 21/9;
-    min-height: 500px;
+    min-height: 520px;
 }
 
 .mosaic-label {
