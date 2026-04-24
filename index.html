@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preload" as="image" href="images/hero.png">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -328,8 +329,22 @@
     </footer>
 
     <script src="main.js"></script>
-    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js" defer></script>
-    <script src="https://files.bpcontent.cloud/2026/04/22/16/20260422164514-FGSJ6ANJ.js" defer></script>
+    <!-- Lazy load Botpress to improve initial page speed -->
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var bpInject = document.createElement('script');
+                bpInject.src = 'https://cdn.botpress.cloud/webchat/v3.6/inject.js';
+                document.body.appendChild(bpInject);
+
+                bpInject.onload = function() {
+                    var bpConfig = document.createElement('script');
+                    bpConfig.src = 'https://files.bpcontent.cloud/2026/04/22/16/20260422164514-FGSJ6ANJ.js';
+                    document.body.appendChild(bpConfig);
+                };
+            }, 2500); // Wait 2.5 seconds after page load
+        });
+    </script>
 
 </body>
 </html>
