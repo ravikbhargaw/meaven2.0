@@ -153,58 +153,53 @@
 
     <section id="portfolio-section">
         <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Work That Speaks for Itself</h2>
-            <p class="subheadline" style="margin-bottom: 4rem;">A curated record of commercial fit-outs delivered across Bengaluru.</p>
-            
-            <!-- Cluster 1: Cinematic Scale (Horizontals) -->
-            <div class="cluster-label">Cinematic Scale</div>
-            <div class="mosaic-grid" style="margin-bottom: 6rem;">
+            <div class="mosaic-grid">
+                <!-- Row 1: The Big Opening -->
                 <div class="mosaic-item span-12">
                     <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%201.jpg">
                         <source src="images/portfolio/WIP%20-%20Undulation%20Check.mp4" type="video/mp4">
                     </video>
-                    <div class="mosaic-label">Precision Check: Undulation Audit</div>
+                    <div class="mosaic-label">Precision: Undulation Audit</div>
+                </div>
+
+                <!-- Row 2: Editorial Mix -->
+                <div class="mosaic-item span-4">
+                    <img src="images/portfolio/Black%20Matte%20-%2045MM%20-%201.jpg" alt="Black Matte" loading="lazy">
+                    <div class="mosaic-label">Detail: 45MM Black Matte</div>
                 </div>
                 <div class="mosaic-item span-8">
                     <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/White%20Powder%20Coated%20-%2045MM%20-%202.jpg">
                         <source src="images/portfolio/Black%20Matte%20-%2045Mm%20With%20Frameless%20Doors.mp4" type="video/mp4">
                     </video>
-                    <div class="mosaic-label">Executive Suite: Integrated Frameless Systems</div>
+                    <div class="mosaic-label">Scale: Integrated Frameless Systems</div>
                 </div>
-                <div class="mosaic-item span-4">
-                    <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%203.jpg">
-                        <source src="images/portfolio/Frameless%20Door%20with%20Vascal.mp4" type="video/mp4">
-                    </video>
-                    <div class="mosaic-label">Frameless Door with Vascal System</div>
-                </div>
-            </div>
 
-            <!-- Cluster 2: Precision Details (Portraits) -->
-            <div class="cluster-label">Technical Precision</div>
-            <div class="mosaic-grid">
-                <div class="mosaic-item span-6">
-                    <img src="images/portfolio/Black%20Matte%20-%2045MM%20-%201.jpg" alt="Black Matte Detail" loading="lazy">
-                    <div class="mosaic-label">Black Matte - 45MM Finish</div>
-                </div>
+                <!-- Row 3: Detail Cluster -->
                 <div class="mosaic-item span-6">
                     <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%202.jpg">
                         <source src="images/portfolio/Bi-Fold%20Door%20-%20Powder%20Coated%20Profile.mp4" type="video/mp4">
                     </video>
-                    <div class="mosaic-label">Bi-Fold Door Engineering</div>
-                </div>
-                <div class="mosaic-item span-6">
-                    <img src="images/portfolio/White%20Powder%20Coated%20-%2045MM%20-%201.jpg" alt="White Powder Coated" loading="lazy">
-                    <div class="mosaic-label">White Powder Coated - 45MM Detail</div>
+                    <div class="mosaic-label">Engineering: Bi-Fold System</div>
                 </div>
                 <div class="mosaic-item span-6">
                     <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%201.jpg">
                         <source src="images/portfolio/Vascal%20Frame%20-%20WIP.mp4" type="video/mp4">
                     </video>
-                    <div class="mosaic-label">WIP: Vascal Frame Alignment</div>
+                    <div class="mosaic-label">Site WIP: Vascal Alignment</div>
+                </div>
+
+                <!-- Row 4: Closing Shot -->
+                <div class="mosaic-item span-4">
+                    <img src="images/portfolio/White%20Powder%20Coated%20-%2045MM%20-%201.jpg" alt="White Powder Coated" loading="lazy">
+                    <div class="mosaic-label">Finish: Powder Coating Accuracy</div>
+                </div>
+                <div class="mosaic-item span-8">
+                    <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%203.jpg">
+                        <source src="images/portfolio/Frameless%20Door%20with%20Vascal.mp4" type="video/mp4">
+                    </video>
+                    <div class="mosaic-label">Innovation: Slim Profile Glass</div>
                 </div>
             </div>
-
-            <p style="margin-top: 4rem; opacity: 0.5; font-style: italic; border-top: 1px solid var(--gamma-border); padding-top: 2rem;">Raw Site Reality: We don't use 3D renders or studio lighting. These are real sites, real handovers, and 100% delivered accuracy.</p>
         </div>
     </section>
 
@@ -315,5 +310,22 @@
             trackMilestone('portfolio-section', 'Portfolio_Audit');
         });
     </script>
+    <!-- Reveal Script -->
+    <script>
+        const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("reveal");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll(".mosaic-item").forEach(item => {
+            observer.observe(item);
+        });
+    </script>
 </body>
 </html>
+
+

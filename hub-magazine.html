@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Meaven Execution Hub | Option 1: Premium Magazine</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hub-magazine.css">
+</head>
+<body id="hub-body">
+
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Meaven Logo" class="logo">
+            </a>
+            <div style="display: flex; align-items: center;">
+                <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20request%20an%20Operational%20Review." class="btn btn-primary">Request Review</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <p style="color: var(--gamma-accent); font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">The B2B Execution Hub</p>
+            <h1>Execution Without <br>the Chaos.</h1>
+            <p class="subheadline">Scroll down to experience the Meaven standard of commercial fit-out excellence.</p>
+        </div>
+    </section>
+
+    <section id="portfolio-section">
+        <div class="container">
+            <div class="mosaic-grid">
+                <!-- Row 1: The Big Opening -->
+                <div class="mosaic-item span-12">
+                    <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%201.jpg">
+                        <source src="images/portfolio/WIP%20-%20Undulation%20Check.mp4" type="video/mp4">
+                    </video>
+                    <div class="mosaic-label">Precision: Undulation Audit</div>
+                </div>
+
+                <!-- Row 2: Editorial Mix -->
+                <div class="mosaic-item span-4">
+                    <img src="images/portfolio/Black%20Matte%20-%2045MM%20-%201.jpg" alt="Black Matte" loading="lazy">
+                    <div class="mosaic-label">Detail: 45MM Black Matte</div>
+                </div>
+                <div class="mosaic-item span-8">
+                    <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/White%20Powder%20Coated%20-%2045MM%20-%202.jpg">
+                        <source src="images/portfolio/Black%20Matte%20-%2045Mm%20With%20Frameless%20Doors.mp4" type="video/mp4">
+                    </video>
+                    <div class="mosaic-label">Scale: Integrated Frameless Systems</div>
+                </div>
+
+                <!-- Row 3: Detail Cluster -->
+                <div class="mosaic-item span-6">
+                    <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%202.jpg">
+                        <source src="images/portfolio/Bi-Fold%20Door%20-%20Powder%20Coated%20Profile.mp4" type="video/mp4">
+                    </video>
+                    <div class="mosaic-label">Engineering: Bi-Fold System</div>
+                </div>
+                <div class="mosaic-item span-6">
+                    <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%201.jpg">
+                        <source src="images/portfolio/Vascal%20Frame%20-%20WIP.mp4" type="video/mp4">
+                    </video>
+                    <div class="mosaic-label">Site WIP: Vascal Alignment</div>
+                </div>
+
+                <!-- Row 4: Closing Shot -->
+                <div class="mosaic-item span-4">
+                    <img src="images/portfolio/White%20Powder%20Coated%20-%2045MM%20-%201.jpg" alt="White Powder Coated" loading="lazy">
+                    <div class="mosaic-label">Finish: Powder Coating Accuracy</div>
+                </div>
+                <div class="mosaic-item span-8">
+                    <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%203.jpg">
+                        <source src="images/portfolio/Frameless%20Door%20with%20Vascal.mp4" type="video/mp4">
+                    </video>
+                    <div class="mosaic-label">Innovation: Slim Profile Glass</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <p style="font-weight: 800; margin-bottom: 0.5rem; opacity: 1;">Meaven Designs</p>
+                <p style="font-size: 0.875rem;">Execution Hub | Option 1: Ultra-Premium</p>
+            </div>
+            <a href="https://wa.me/918296077466" class="btn btn-primary">Let's Connect</a>
+        </div>
+    </footer>
+
+    <!-- Reveal Script -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.mosaic-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+
+</body>
+</html>
