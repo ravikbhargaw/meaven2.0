@@ -156,8 +156,8 @@
             <div class="mosaic-grid">
                 <!-- Row 1: The Big Opening -->
                 <div class="mosaic-item span-12">
-                    <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%201.jpg">
-                        <source src="images/portfolio/WIP%20-%20Undulation%20Check.mp4" type="video/mp4">
+                    <video loop muted playsinline preload="none" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%201.jpg">
+                        <source data-src="images/portfolio/WIP%20-%20Undulation%20Check.mp4" type="video/mp4">
                     </video>
                     <div class="mosaic-label">Precision: Undulation Audit</div>
                 </div>
@@ -168,22 +168,22 @@
                     <div class="mosaic-label">Detail: 45MM Black Matte</div>
                 </div>
                 <div class="mosaic-item span-8">
-                    <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/White%20Powder%20Coated%20-%2045MM%20-%202.jpg">
-                        <source src="images/portfolio/Black%20Matte%20-%2045Mm%20With%20Frameless%20Doors.mp4" type="video/mp4">
+                    <video loop muted playsinline preload="none" poster="images/portfolio/White%20Powder%20Coated%20-%2045MM%20-%202.jpg">
+                        <source data-src="images/portfolio/Black%20Matte%20-%2045Mm%20With%20Frameless%20Doors.mp4" type="video/mp4">
                     </video>
                     <div class="mosaic-label">Scale: Integrated Frameless Systems</div>
                 </div>
 
                 <!-- Row 3: Detail Cluster -->
                 <div class="mosaic-item span-6">
-                    <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%202.jpg">
-                        <source src="images/portfolio/Bi-Fold%20Door%20-%20Powder%20Coated%20Profile.mp4" type="video/mp4">
+                    <video loop muted playsinline preload="none" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%202.jpg">
+                        <source data-src="images/portfolio/Bi-Fold%20Door%20-%20Powder%20Coated%20Profile.mp4" type="video/mp4">
                     </video>
                     <div class="mosaic-label">Engineering: Bi-Fold System</div>
                 </div>
                 <div class="mosaic-item span-6">
-                    <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%201.jpg">
-                        <source src="images/portfolio/Vascal%20Frame%20-%20WIP.mp4" type="video/mp4">
+                    <video loop muted playsinline preload="none" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%201.jpg">
+                        <source data-src="images/portfolio/Vascal%20Frame%20-%20WIP.mp4" type="video/mp4">
                     </video>
                     <div class="mosaic-label">Site WIP: Vascal Alignment</div>
                 </div>
@@ -194,8 +194,8 @@
                     <div class="mosaic-label">Finish: Powder Coating Accuracy</div>
                 </div>
                 <div class="mosaic-item span-8">
-                    <video autoplay loop muted playsinline preload="metadata" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%203.jpg">
-                        <source src="images/portfolio/Frameless%20Door%20with%20Vascal.mp4" type="video/mp4">
+                    <video loop muted playsinline preload="none" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%203.jpg">
+                        <source data-src="images/portfolio/Frameless%20Door%20with%20Vascal.mp4" type="video/mp4">
                     </video>
                     <div class="mosaic-label">Innovation: Slim Profile Glass</div>
                 </div>
@@ -310,14 +310,28 @@
             trackMilestone('portfolio-section', 'Portfolio_Audit');
         });
     </script>
-    <!-- Reveal Script -->
+    <!-- Reveal & Lazy Load Script -->
     <script>
-        const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const observerOptions = { threshold: 0.1, rootMargin: "0px 0px 50px 0px" };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("reveal");
-                    observer.unobserve(entry.target);
+                    const item = entry.target;
+                    item.classList.add("reveal");
+                    
+                    // Lazy load video if present
+                    const video = item.querySelector('video');
+                    if (video) {
+                        const source = video.querySelector('source');
+                        if (source && source.hasAttribute('data-src')) {
+                            source.src = source.getAttribute('data-src');
+                            source.removeAttribute('data-src');
+                            video.load();
+                            video.play().catch(e => console.log("Autoplay prevented:", e));
+                        }
+                    }
+                    
+                    observer.unobserve(item);
                 }
             });
         }, observerOptions);
