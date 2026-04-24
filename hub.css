@@ -296,6 +296,19 @@ footer {
 }
 
 
+/* Portfolio Grouping Labels */
+.cluster-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--gamma-accent);
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+    border-left: 4px solid var(--gamma-accent);
+    display: inline-block;
+}
+
 /* Mosaic Portfolio Grid */
 /* Mosaic Portfolio Grid */
 .mosaic-grid {
