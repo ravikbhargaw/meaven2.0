@@ -11,6 +11,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="hub.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M041N6068W"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M041N6068W');
+    </script>
 </head>
 <body id="hub-body">
 
@@ -278,9 +287,9 @@
         const clientRef = urlParams.get('ref') || 'Direct_Visit';
 
         // 2. Log Initial Entry to GA4
-        if (window.gtag) {
+        if (typeof gtag !== 'undefined') {
             gtag('event', 'hub_entry', {
-                'client_id': clientRef,
+                'lead_id': clientRef,
                 'page_path': window.location.pathname
             });
             console.log(`B2B Tracking Active: Lead [${clientRef}]`);
@@ -294,9 +303,9 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        if (window.gtag) {
+                        if (typeof gtag !== 'undefined') {
                             gtag('event', 'hub_milestone', {
-                                'client_id': clientRef,
+                                'lead_id': clientRef,
                                 'milestone': milestoneName
                             });
                         }
