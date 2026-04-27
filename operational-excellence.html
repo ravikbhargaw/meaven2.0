@@ -354,45 +354,6 @@
             observer.observe(item);
         });
     </script>
-    <!-- Meaven Intelligence AI Button -->
-    <div class="mi-ai-button" id="mi-trigger">
-        <div class="mi-orb"></div>
-        <span>Meaven Intelligence</span>
-    </div>
-
-    <!-- Botpress Intelligence Engine -->
-    <script>
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                var bpInject = document.createElement('script');
-                bpInject.src = 'https://cdn.botpress.cloud/webchat/v3.6/inject.js';
-                document.body.appendChild(bpInject);
-
-                bpInject.onload = function() {
-                    var bpConfig = document.createElement('script');
-                    bpConfig.src = 'https://files.bpcontent.cloud/2026/04/22/16/20260422164514-FGSJ6ANJ.js';
-                    document.body.appendChild(bpConfig);
-                };
-            }, 1500); // Faster load for the Hub
-        });
-
-        // Trigger AI Chat from our custom MI Orb
-        document.getElementById('mi-trigger').addEventListener('click', function() {
-            if (window.botpressWebChat) {
-                window.botpressWebChat.sendEvent({ type: 'show' });
-                
-                // Track AI Engagement in GA4
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'ai_engagement', {
-                        'lead_id': new URLSearchParams(window.location.search).get('ref') || 'Direct_Visit',
-                        'action': 'Orb_Click'
-                    });
-                }
-            } else {
-                console.log("MI Engine warming up...");
-            }
-        });
-    </script>
 </body>
 </html>
 
