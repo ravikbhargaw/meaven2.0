@@ -1,4 +1,4 @@
-﻿/* ========================================
+/* ========================================
    MEAVEN DESIGNS  PREMIUM DARK DESIGN SYSTEM
    Apple-Inspired Dark Mode  Glassmorphism
    ======================================== */
@@ -1161,6 +1161,9 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9375rem;
     color: var(--text-secondary);
     font-weight: 500;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .price-value {
@@ -1170,6 +1173,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary);
     text-align: right;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .price-value small {
