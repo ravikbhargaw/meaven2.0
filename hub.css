@@ -96,6 +96,22 @@ nav {
     filter: invert(1);
 }
 
+.nav-login {
+    padding: 0.5rem 1.25rem !important;
+    background: rgba(0, 0, 0, 0.03) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    color: var(--gamma-text) !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-login:hover {
+    background: rgba(0, 0, 0, 0.08) !important;
+    border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
 /* Hero */
 .hero {
     text-align: center;
