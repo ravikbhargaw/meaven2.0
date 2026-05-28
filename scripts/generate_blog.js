@@ -9,43 +9,46 @@ const TEMPLATE_PATH = 'scripts/blog_template.html';
 const INSIGHTS_DIR = 'insights';
 const SITEMAP_PATH = 'sitemap.xml';
 
-// Curated high-resolution Unsplash images of office partitions/design
-const CATEGORY_IMAGES = {
-    "Design & Architecture": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1200",
-    "Acoustics": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1200",
-    "Maintenance": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1200",
-    "Trends": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
-    "Compliance": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200",
-    "Execution": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200",
-    "Industry Insights": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1200",
-    "Wellness": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200",
-    "Sustainability": "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&q=80&w=1200",
-    "Strategy": "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&q=80&w=1200"
-};
+// Expanded premium pool of high-resolution Unsplash images of office partitions/design
+const PREMIUM_IMAGES = [
+    "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1497215842964-222b430eb094?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1571624436279-b272f77ee62a?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=1200"
+];
 
-// Available categories for generation
-const CATEGORIES = Object.keys(CATEGORY_IMAGES);
+// Fallback image in case
+const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1200";
 
-const PROMPT = `
-Write a high-quality, professional B2B blog post for 'Meaven Designs' (an office partition and premium workspace execution company in Bangalore, India).
-Tone: Premium, highly technical, architectural, and authoritative.
-Target Audience: Project owners, builders, managed space developers, corporate leaders, and office architects in Bangalore.
-
-Content Guidelines:
-- Highlight concepts like "Execution Intelligence", "precision modular systems", "fixed-scope turnkey accountability", "zero-error site execution", and avoiding the "construction blame-shifting cycle".
-- Target localized office hubs like Bangalore (Outer Ring Road, Whitefield, Indiranagar, Electronic City).
-- Choose ONE category from this exact list: ${CATEGORIES.map(c => `"${c}"`).join(', ')}.
-
-Output strictly a JSON object with exactly these keys:
-- "title": A compelling, expert-level B2B article title.
-- "category": The exact category selected from the list.
-- "meta_description": A clear SEO description (120-160 characters).
-- "lead_text": A strong, punchy introductory lead paragraph (1-2 sentences).
-- "content_html": The full article body in HTML. Use <h2>, <h3>, <p>, <ul>, <li>, <strong>, <em> tags. Must include technical details, concrete design or material specifications (e.g. STC ratings for acoustics, millimetre clearances, aluminum extrusion profiles, toughened vs. laminated glass), and clear actionable insights.
-- "slug": A URL-friendly version of the title (all lowercase, hyphens instead of spaces, no special characters).
-
-Strictly return ONLY the JSON object. Do not wrap it in markdown block or any additional text.
-`;
+// Standard blog categories
+const CATEGORIES = [
+    "Design & Architecture",
+    "Acoustics",
+    "Maintenance",
+    "Trends",
+    "Compliance",
+    "Execution",
+    "Industry Insights",
+    "Wellness",
+    "Sustainability",
+    "Strategy"
+];
 
 // Helper: HTTP POST request using native https module
 function makePostRequest(url, data) {
@@ -78,8 +81,34 @@ function makePostRequest(url, data) {
     });
 }
 
-// Generate blog content with model fallback
-async function generateBlogContent() {
+// Extract existing blog headlines and images to guarantee absolute uniqueness
+function getExistingContent() {
+    if (!fs.existsSync(INSIGHTS_HTML)) {
+        return { titles: [], images: [] };
+    }
+
+    const html = fs.readFileSync(INSIGHTS_HTML, 'utf-8');
+    const titles = [];
+    const images = [];
+
+    // Match <h3>Title Here</h3> inside index/grid
+    const titleRegex = /<h3>([^<]+)<\/h3>/g;
+    let match;
+    while ((match = titleRegex.exec(html)) !== null) {
+        titles.push(match[1].trim());
+    }
+
+    // Match <img src="URL"> inside index/grid
+    const imgRegex = /<img\s+src="([^"]+)"/g;
+    while ((match = imgRegex.exec(html)) !== null) {
+        images.push(match[1].trim());
+    }
+
+    return { titles, images };
+}
+
+// Generate blog content with model fallback and dynamic prompt avoidance
+async function generateBlogContent(existingTitles) {
     if (process.argv.includes('--mock')) {
         console.log("Mock mode enabled. Generating high-quality mock B2B blog post...");
         return {
@@ -108,15 +137,49 @@ async function generateBlogContent() {
     }
 
     const apiKey = GEMINI_API_KEY.trim();
-    // Prioritized model chain
     const models = ["gemini-3.5-flash", "gemini-2.5-flash"];
-    
+
+    // Format list of existing titles to instruct the AI what NOT to write about
+    const avoidedTitlesText = existingTitles.length > 0 
+        ? existingTitles.map(t => `- "${t}"`).join('\n')
+        : "None (first article)";
+
+    const prompt = `
+Write a high-quality, professional B2B blog post for 'Meaven Designs' (an office partition and premium workspace execution company in Bangalore, India).
+Tone: Premium, highly technical, architectural, and authoritative.
+Target Audience: Project owners, builders, developers, managed office operators, and architects in Bangalore.
+
+CRITICAL REQUIREMENT (TOPIC & HEADLINE UNIQUENESS):
+You MUST NOT write about, duplicate, or closely match any of these existing article headlines already on our site:
+${avoidedTitlesText}
+
+Core Hot Topics to Select From (Ensure fresh angles and highly knowledgeable insights):
+- High-spec managed office developments and coworking structures (flexible, modular floor plates).
+- The massive wave of Global Capability Centers (GCCs) setting up in Bangalore and their rigorous demand for acoustic privacy, fast-track turnkey execution, and strict architectural standards.
+- Advanced acoustics (STC calculations, glass asymmetrical laminations, dual-durometer EPDM gaskets).
+- Turnkey execution, pre-construction 3D laser scanning (preventing beam deflection and structural leveling mismatch, defeating the blame-shifting construction cycle).
+- Concrete structural engineering specs (e.g. 6063-T6 architectural aluminum extrusions, sub-millimetre tolerance clearances).
+- Highly localized focus targeting builders, top-tier architects, and key Bangalore micro-markets (Outer Ring Road, Sarjapur, Whitefield, Manyata Tech Park, Electronic City, Indiranagar).
+
+Choose ONE category from: ${CATEGORIES.map(c => `"${c}"`).join(', ')}.
+
+Output strictly a JSON object with exactly these keys:
+- "title": A unique, expert-level B2B article title focusing on coworking, GCCs, acoustics, or premium workspace execution (never repeat or closely mimic the avoided headlines above!).
+- "category": The exact category selected.
+- "meta_description": A clear SEO description (120-160 characters).
+- "lead_text": A strong, punchy introductory lead paragraph (1-2 sentences).
+- "content_html": The full article body in HTML. Use <h2>, <h3>, <p>, <ul>, <li>, <strong>, <em> tags. Must include technical engineering details, localized context, and deep execution insights.
+- "slug": A URL-friendly version of the title.
+
+Strictly return ONLY the JSON object. Do not wrap it in markdown code block or any additional text.
+`;
+
     for (const model of models) {
         console.log(`Attempting blog generation using ${model}...`);
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
         const requestData = {
             contents: [{
-                parts: [{ text: PROMPT }]
+                parts: [{ text: prompt }]
             }],
             generationConfig: {
                 responseMimeType: "application/json"
@@ -127,7 +190,6 @@ async function generateBlogContent() {
             const res = await makePostRequest(url, requestData);
             const textResponse = res.candidates[0].content.parts[0].text.trim();
             
-            // Clean up any potential markdown wrapper (e.g. ```json ... ```)
             let cleanedJson = textResponse;
             if (cleanedJson.startsWith("```")) {
                 cleanedJson = cleanedJson.replace(/^```json\s*/i, "").replace(/```$/, "").trim();
@@ -135,7 +197,6 @@ async function generateBlogContent() {
             
             const parsedData = JSON.parse(cleanedJson);
             
-            // Basic validation
             const requiredKeys = ["title", "category", "meta_description", "lead_text", "content_html", "slug"];
             for (const key of requiredKeys) {
                 if (!parsedData[key]) {
@@ -147,7 +208,6 @@ async function generateBlogContent() {
             return parsedData;
         } catch (error) {
             console.warn(`Warning: Model ${model} failed. Error: ${error.message}`);
-            // Proceed to the next model in the list
         }
     }
 
@@ -252,13 +312,29 @@ function updateSitemap(postData) {
 async function run() {
     try {
         console.log(`Starting automated B2B blog generation...`);
-        const postData = await generateBlogContent();
         
-        // Match category to a premium Unsplash image, or fallback to default
-        const imageUrl = CATEGORY_IMAGES[postData.category] || CATEGORY_IMAGES["Design & Architecture"];
+        // 1. Gather existing content (headlines & images currently used)
+        const { titles: existingTitles, images: existingImages } = getExistingContent();
+        console.log(`Found ${existingTitles.length} existing articles currently live on site.`);
+
+        // 2. Select a 100% unique cover photo from our curated premium pool
+        const unusedImages = PREMIUM_IMAGES.filter(img => !existingImages.includes(img));
+        let selectedImage = DEFAULT_IMAGE;
+        if (unusedImages.length > 0) {
+            // Select a random image from the pool of UNUSED images
+            selectedImage = unusedImages[Math.floor(Math.random() * unusedImages.length)];
+            console.log(`Selected a 100% unique cover photo from the premium pool.`);
+        } else {
+            console.log(`All premium pool images are currently in use. Selecting a fallback.`);
+            selectedImage = PREMIUM_IMAGES[Math.floor(Math.random() * PREMIUM_IMAGES.length)];
+        }
+
+        // 3. Generate unique B2B blog post content with dynamic headline avoidance
+        const postData = await generateBlogContent(existingTitles);
         
-        createBlogPage(postData, imageUrl);
-        updateInsightsIndex(postData, imageUrl);
+        // 4. Create detail page and update index files
+        createBlogPage(postData, selectedImage);
+        updateInsightsIndex(postData, selectedImage);
         updateSitemap(postData);
         
         console.log(`\nAll operations completed successfully! New blog post is live.`);
