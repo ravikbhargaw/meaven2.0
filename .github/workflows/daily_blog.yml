@@ -4,8 +4,8 @@ on:
   schedule:
     # 04:30 UTC is 10:00 AM IST
     - cron: '30 4 * * *'
-    # 11:55 UTC is 05:25 PM IST
-    - cron: '55 11 * * *'
+    # 12:10 UTC is 05:40 PM IST
+    - cron: '10 12 * * *'
   workflow_dispatch: # Allows manual trigger
 
 permissions:
