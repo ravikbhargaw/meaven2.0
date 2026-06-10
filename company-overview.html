@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="canonical" href="https://meaven.in/company-overview.html">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M041N6068W"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M041N6068W');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meaven Designs Project Portfolio. Delivering precision commercial glass installations for coworking operators, enterprise offices, and managed workspaces in Bangalore.">
+    <title>Meaven Designs — Project Portfolio & Company Overview</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Custom local styles for Comparison Grid, Badges, and Project details matching theme */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .comparison-card {
+            display: flex;
+            flex-direction: column;
+            padding: var(--space-lg);
+        }
+        .comparison-card.them-card {
+            border-color: rgba(239, 68, 68, 0.15);
+            background: rgba(12, 13, 15, 0.4);
+        }
+        .comparison-card.us-card {
+            border-color: var(--border-accent);
+            background: var(--bg-card);
+        }
+        .comparison-header {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-medium);
+            font-family: var(--font-heading);
+        }
+        .comparison-header.them {
+            color: #ef4444;
+            background: linear-gradient(135deg, #ef4444, #f87171);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .comparison-header.us {
+            color: var(--accent);
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .comparison-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .comparison-list li {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .comparison-list .indicator {
+            font-weight: 700;
+            font-size: 1.25rem;
+            line-height: 1.2;
+            flex-shrink: 0;
+        }
+        .comparison-list .indicator.red {
+            color: #ef4444;
+        }
+        .comparison-list .indicator.green {
+            color: #10b981;
+        }
+        .comparison-list h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.15rem;
+        }
+        .comparison-list p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        
+        /* Custom Project Badges and Layout overrides */
+        .proj-type-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(8, 9, 10, 0.8);
+            border: 1px solid var(--border-medium);
+            color: var(--text-primary);
+            font-size: 0.6875rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            backdrop-filter: blur(8px);
+            font-weight: 600;
+            z-index: 2;
+        }
+        .proj-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .proj-spec {
+            font-size: 0.6875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: var(--accent-muted);
+            border: 1px solid var(--border-accent);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        /* Process section items styling */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .process-card {
+            padding: 2rem var(--space-md);
+        }
+        .process-num {
+            font-size: 2.25rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.35;
+            display: block;
+            margin-bottom: 0.75rem;
+            font-family: var(--font-heading);
+        }
+        
+        /* Capabilities styling */
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+            .capabilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .cap-card {
+            padding: 2rem var(--space-md);
+        }
+        .cap-icon-wrap {
+            width: 44px;
+            height: 44px;
+            background: var(--accent-muted);
+            border: 1px solid var(--border-accent);
+            border-radius: var(--radius-md);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+        .cap-icon-wrap svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* Gallery CTA block */
+        .gallery-cta {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+            backdrop-filter: blur(var(--glass-blur));
+        }
+        .gallery-cta-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+        .gallery-cta-text strong {
+            color: var(--text-primary);
+        }
+        
+        /* Fallback for number text color in case text-gradient clipping isn't supported */
+        .number-value {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Meaven Designs" class="logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="https://wa.me/918296077466?text=Hi%2C%20I%27d%20like%20to%20receive%20your%20Company%20Profile%20PDF." class="footer-download-btn">Download Company Profile</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="insights.html">Insights</a></li>
+                <li><a href="https://hub.meaven.in" class="nav-login">Client Login</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="images/hero.png" alt="Premium commercial glass office partition" loading="eager">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge animate-reveal">Commercial Glass Fit-Out · Bangalore</div>
+            <h1 class="hero-headline animate-reveal">Execution you don't<br>have to <em>chase.</em></h1>
+            <p class="hero-sub animate-reveal">Meaven delivers precision commercial glass installations for coworking operators, enterprise offices, and managed workspaces — on time, on specification, with zero last-minute surprises.</p>
+            
+            <div class="hero-ctas animate-reveal">
+                <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20discuss%20a%20project." class="btn btn-primary" id="hero-whatsapp-cta">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:0.25rem;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Request a Review
+                </a>
+                <a href="#work" class="btn btn-secondary">View Selected Work</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Why Meaven Comparison Section -->
+    <section class="why-section" id="why-meaven" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header animate-reveal">
+                <span class="section-label">Why Meaven</span>
+                <h2 class="section-title">The gap most vendors<br>never close.</h2>
+                <p style="color: var(--text-secondary); max-width: 600px;">Standard vendors fail on process, not product. Here's what that costs you — and how we've engineered it out.</p>
+            </div>
+            
+            <div class="comparison-grid animate-reveal">
+                <!-- Standard Vendor Card -->
+                <div class="why-card comparison-card them-card">
+                    <h3 class="comparison-header them">Standard Vendor</h3>
+                    <ul class="comparison-list">
+                        <li>
+                            <span class="indicator red">×</span>
+                            <div>
+                                <h4>Manual measurements</h4>
+                                <p>Glass resizing discovered on handover day, stalling timelines and causing rework.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="indicator red">×</span>
+                            <div>
+                                <h4>Delayed communication</h4>
+                                <p>You find out about delivery delays the morning of expected delivery, disrupting schedules.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="indicator red">×</span>
+                            <div>
+                                <h4>Unvetted hardware</h4>
+                                <p>Cheap hardware that fails warranty within months, causing operational hassle.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="indicator red">×</span>
+                            <div>
+                                <h4>No documentation at close</h4>
+                                <p>You are on your own post-installation with no digital logs or SLA support.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Meaven Card -->
+                <div class="why-card comparison-card us-card">
+                    <h3 class="comparison-header us">Meaven</h3>
+                    <ul class="comparison-list">
+                        <li>
+                            <span class="indicator green">✓</span>
+                            <div>
+                                <h4>Laser site audits + CAD verification</h4>
+                                <p>Double-checked measurements before a single pane is ordered or fabricated.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="indicator green">✓</span>
+                            <div>
+                                <h4>Proactive milestone tracking</h4>
+                                <p>Real-time updates automatically sent to your delivery and site management team.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="indicator green">✓</span>
+                            <div>
+                                <h4>Factory-vetted hardware</h4>
+                                <p>Built to Flipspaces/Brigade+ specification standard only, ensuring durability.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="indicator green">✓</span>
+                            <div>
+                                <h4>Digital handover pack</h4>
+                                <p>Every hinge logged, warranty on file, and backed by our 48-hr snag resolution SLA.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio -->
+    <section class="products-preview" id="work">
+        <div class="container">
+            <div class="section-header animate-reveal" style="text-align: center; margin-bottom: 3rem;">
+                <span class="section-label" style="padding-left: 0; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: inline-block;"></span>
+                    Portfolio & Live Logs
+                </span>
+                <h2 class="section-title" style="margin-top: 1rem;">Real Work. Zero Staging.</h2>
+                <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto; line-height: 1.8;">
+                    We do not show stock renders, staged mockups, or AI-generated design concepts. Every commercial glass partition, door system, and acoustic cabin we install is documented transparently in real-time.
+                </p>
+            </div>
+            
+            <!-- Gallery Redirect CTA (Large Glassmorphic Banner Card) -->
+            <div class="why-card animate-reveal" style="padding: 3rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; max-width: 900px; margin: 0 auto; border-color: var(--border-accent);">
+                <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); font-weight: 700; background: var(--accent-muted); border: 1px solid var(--border-accent); padding: 6px 14px; border-radius: var(--radius-pill);">
+                    Operational Excellence Database
+                </div>
+                <h3 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-primary); margin-top: 0.5rem; max-width: 600px;">
+                    Access Our Project Handover &amp; Execution Records
+                </h3>
+                <p style="color: var(--text-secondary); max-width: 620px; font-size: 0.95rem; line-height: 1.7;">
+                    Explore real-time WIP videos, site survey reports, precision checks, CAD layouts, and digital handover documentation for over 50 projects delivered across Bangalore.
+                </p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; width: 100%;">
+                    <a href="operational-excellence.html" class="btn btn-primary">
+                        Enter Execution Hub →
+                    </a>
+                    <a href="projects.html" class="btn btn-secondary">
+                        View Case Studies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Process Section -->
+    <section class="why-section" id="process" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header animate-reveal">
+                <span class="section-label">How We Work</span>
+                <h2 class="section-title">Four stages. No gaps.</h2>
+                <p style="color: var(--text-secondary); max-width: 600px;">Every Meaven project runs the same precision playbook — from first survey to signed handover.</p>
+            </div>
+            
+            <div class="process-grid animate-reveal">
+                <div class="why-card process-card">
+                    <span class="process-num">01</span>
+                    <h3>Laser site survey</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Tech-driven dimensional audit with CAD verification. What's specified is what gets fabricated.</p>
+                </div>
+                <div class="why-card process-card">
+                    <span class="process-num">02</span>
+                    <h3>Specification lock</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Detailed BOQ — glass type, profile, hardware brand, and finish — confirmed before fabrication begins.</p>
+                </div>
+                <div class="why-card process-card">
+                    <span class="process-num">03</span>
+                    <h3>Milestone tracking</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Real-time status updates shared with your team throughout fabrication and lead-time windows.</p>
+                </div>
+                <div class="why-card process-card">
+                    <span class="process-num">04</span>
+                    <h3>Digital handover</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Site sign-off with full warranty documentation, installed hardware log, and 48-hour snag SLA from day one.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section class="why-section" id="capabilities">
+        <div class="container">
+            <div class="section-header animate-reveal">
+                <span class="section-label">Capabilities</span>
+                <h2 class="section-title">What we install.</h2>
+                <p style="color: var(--text-secondary); max-width: 600px;">Specialized for commercial environments where specification quality and handover reliability are non-negotiable.</p>
+            </div>
+            
+            <div class="capabilities-grid animate-reveal">
+                <!-- Cell 1 -->
+                <div class="why-card cap-card">
+                    <div class="cap-icon-wrap">
+                        <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="1.5" y="1.5" width="12" height="12" rx="0.5" stroke="currentColor" stroke-width="1.1"/>
+                          <line x1="1.5" y1="7.5" x2="13.5" y2="7.5" stroke="currentColor" stroke-width="1.1"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">Frameless glass partitions</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Full-height systems in 10MM or 12MM glass. Floor springs, patch fittings, and door hardware included.</p>
+                </div>
+                <!-- Cell 2 -->
+                <div class="why-card cap-card">
+                    <div class="cap-icon-wrap">
+                        <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="1.5" y="1.5" width="12" height="12" rx="0.5" stroke="currentColor" stroke-width="1.1"/>
+                          <rect x="3.5" y="3.5" width="8" height="8" rx="0.5" stroke="currentColor" stroke-width="0.8"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">45MM framed systems</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Black matte, white PPC, chrome, and custom finishes. The workhorse of commercial glass interiors.</p>
+                </div>
+                <!-- Cell 3 -->
+                <div class="why-card cap-card">
+                    <div class="cap-icon-wrap">
+                        <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.5 2L13 7.5L7.5 13L2 7.5L7.5 2Z" stroke="currentColor" stroke-width="1.1"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">Acoustic-rated glass</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Up to 42dB isolation for private cabins, boardrooms, and call pods. STC-certified glass specified.</p>
+                </div>
+                <!-- Cell 4 -->
+                <div class="why-card cap-card">
+                    <div class="cap-icon-wrap">
+                        <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2 4H13M2 7.5H13M2 11H9" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">Stile and frameless doors</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Single and double leaf, with Vascal, floor spring, and patch fitting options. Per-unit specification.</p>
+                </div>
+                <!-- Cell 5 -->
+                <div class="why-card cap-card">
+                    <div class="cap-icon-wrap">
+                        <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="7.5" cy="7.5" r="5.5" stroke="currentColor" stroke-width="1.1"/>
+                          <line x1="7.5" y1="4" x2="7.5" y2="7.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+                          <line x1="7.5" y1="7.5" x2="10.2" y2="9.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">Timeline-backed execution</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Milestone schedules shared with your team. Proactive constraint flagging — not last-minute escalation.</p>
+                </div>
+                <!-- Cell 6 -->
+                <div class="why-card cap-card">
+                    <div class="cap-icon-wrap">
+                        <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3 11.5L11.5 3M3 3.5H3.5M11.5 11.5H12" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+                          <rect x="1.5" y="9.5" width="4" height="4" rx="0.5" stroke="currentColor" stroke-width="1.1"/>
+                          <rect x="9.5" y="1.5" width="4" height="4" rx="0.5" stroke="currentColor" stroke-width="1.1"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">Digital handover pack</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Warranty docs, hardware logs, and snag reports at project close. 48-hour onsite resolution SLA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Clients Section -->
+    <section class="social-proof" id="social-proof" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="proof-header animate-reveal">
+                <span class="section-label">Track Record</span>
+                <h2 class="section-title">Trusted by Bangalore's leading workspace developers</h2>
+            </div>
+            <div class="clients-grid animate-reveal">
+                <div class="client-logo" title="Brigade Easy Home"><img src="images/brigadeplus.com logo9.svg" alt="Brigade"></div>
+                <div class="client-logo" title="HomeLane"><img src="images/homelane.com logo9.svg" alt="HomeLane"></div>
+                <div class="client-logo" title="Obeya"><img src="images/obeya.in logo9.png" alt="Obeya"></div>
+                <div class="client-logo" title="Madgeek"><img src="images/madgeek.in logo9.png" alt="Madgeek"></div>
+                <div class="client-name">U Clean</div>
+                <div class="client-logo" title="Geecell"><img src="images/geecell.com logo9.svg" alt="Geecell"></div>
+                <div class="client-logo" title="Salt World"><img src="images/saltworld.in logo10.png" alt="Salt World"></div>
+                <div class="client-name">EBC Space</div>
+                <div class="client-name">Madhu Infotech</div>
+                <div class="client-logo" title="Bloom Workspace"><img src="images/bloomworkspace.in logo11.webp" alt="Bloom Workspace"></div>
+                <div class="client-logo" title="Barberos"><img src="images/BarberosWhite.png" alt="Barberos"></div>
+                <div class="client-logo" title="Flipspaces"><img src="images/flipspaces.com logo9.png" alt="Flipspaces"></div>
+                <div class="client-logo" title="Poetry of Earth"><img src="images/poetry-of-earth.com logo10.png" alt="Poetry of Earth"></div>
+                <div class="client-name">GNA Architects</div>
+                <div class="client-logo" title="Brainchild"><img src="images/brainchildtech.com logo10.webp" alt="Brainchild"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta-section">
+        <div class="container">
+            <div class="cta-block animate-reveal">
+                <span class="section-label">Next Step</span>
+                <h2>Let's walk through your project scope.</h2>
+                <p>An Operational Review is a no-obligation conversation where we assess your requirements, flag execution risks early, and confirm exactly what's achievable within your timeline and budget.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/918296077466?text=Hi%20Meaven%2C%20I%27d%20like%20to%20discuss%20a%20project." class="btn btn-primary" id="cta-whatsapp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:0.25rem;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Request a Review
+                    </a>
+                    <a href="operational-excellence.html" class="btn btn-secondary">View Execution Hub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <img src="images/logo.png" alt="Meaven Designs" class="logo-img">
+                    </a>
+                    <p class="footer-tagline">Executed with precision.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/918296077466" aria-label="WhatsApp" class="social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="mailto:hello@meaven.in" aria-label="Email" class="social-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="insights.html">Insights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="products.html">Glass Partitions</a></li>
+                        <li><a href="products.html">Stile Doors</a></li>
+                        <li><a href="products.html">Frameless Doors</a></li>
+                        <li><a href="products.html">Floor Spring Doors</a></li>
+                        <li><a href="coworking-solutions.html">Complete Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><a href="https://wa.me/918296077466">WhatsApp</a></li>
+                        <li><a href="mailto:hello@meaven.in">hello@meaven.in</a></li>
+                        <li><span>Bangalore, India</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 1rem;">
+                    <p>&copy; 2026 Meaven Intelligence. All rights reserved.</p>
+                    <div class="footer-legal-links">
+                        <a href="privacy-policy.html" style="color: inherit; text-decoration: none; margin-left: 1.5rem; opacity: 0.7;">Privacy Policy</a>
+                        <a href="terms-of-use.html" style="color: inherit; text-decoration: none; margin-left: 1.5rem; opacity: 0.7;">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var bpInject = document.createElement('script');
+                bpInject.src = 'https://cdn.botpress.cloud/webchat/v3.6/inject.js';
+                document.body.appendChild(bpInject);
+
+                bpInject.onload = function() {
+                    var bpConfig = document.createElement('script');
+                    bpConfig.src = 'https://files.bpcontent.cloud/2026/04/22/16/20260422164514-FGSJ6ANJ.js';
+                    document.body.appendChild(bpConfig);
+                };
+            }, 2500);
+        });
+    </script>
+</body>
+</html>
