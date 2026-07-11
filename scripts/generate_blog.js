@@ -182,7 +182,19 @@ Strictly return ONLY the JSON object. Do not wrap it in markdown code block or a
                 parts: [{ text: prompt }]
             }],
             generationConfig: {
-                responseMimeType: "application/json"
+                responseMimeType: "application/json",
+                responseSchema: {
+                    type: "object",
+                    properties: {
+                        title: { type: "string" },
+                        category: { type: "string" },
+                        meta_description: { type: "string" },
+                        lead_text: { type: "string" },
+                        content_html: { type: "string" },
+                        slug: { type: "string" }
+                    },
+                    required: ["title", "category", "meta_description", "lead_text", "content_html", "slug"]
+                }
             }
         };
 
@@ -197,12 +209,27 @@ Strictly return ONLY the JSON object. Do not wrap it in markdown code block or a
             
             const parsedData = JSON.parse(cleanedJson);
             
-            const requiredKeys = ["title", "category", "meta_description", "lead_text", "content_html", "slug"];
-            for (const key of requiredKeys) {
+            // Safety fallback: generate slug if it's missing but title is present
+            if (!parsedData.slug && parsedData.title) {
+                parsedData.slug = parsedData.title
+                    .toLowerCase()
+                    .replace(/[^a-z0-9\s-]/g, '')
+                    .replace(/\s+/g, '-')
+                    .replace(/-+/g, '-')
+                    .replace(/^-+|-+$/g, '');
+            }
+
+            const unrecoverableKeys = ["title", "content_html"];
+            for (const key of unrecoverableKeys) {
                 if (!parsedData[key]) {
                     throw new Error(`Response is missing required JSON key: "${key}"`);
                 }
             }
+
+            // Set fallbacks for other less critical fields if missing
+            if (!parsedData.category) parsedData.category = "Industry Insights";
+            if (!parsedData.meta_description) parsedData.meta_description = parsedData.lead_text || parsedData.title;
+            if (!parsedData.lead_text) parsedData.lead_text = parsedData.title;
             
             console.log(`Successfully generated article content using ${model}!`);
             return parsedData;
