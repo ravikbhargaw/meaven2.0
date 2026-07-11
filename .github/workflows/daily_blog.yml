@@ -6,6 +6,10 @@ on:
     - cron: '30 4 * * *'
   workflow_dispatch: # Allows manual trigger
 
+concurrency:
+  group: daily-blog
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -34,4 +38,5 @@ jobs:
         git config --local user.name "GitHub Action"
         git add .
         git commit -m "Automated: Daily AI Blog Post" || echo "No changes to commit"
+        git pull --rebase
         git push
