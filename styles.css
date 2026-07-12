@@ -2529,3 +2529,50 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--border-medium) !important;
     backdrop-filter: blur(20px) !important;
 }
+
+/* ========================================
+   AEO/GEO ADDITIONS
+   ======================================== */
+
+/* Capabilities Table */
+.capabilities-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: var(--space-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.capabilities-table th,
+.capabilities-table td {
+    padding: var(--space-md) var(--space-lg);
+    text-align: left;
+}
+
+.capabilities-table th {
+    background: var(--bg-secondary);
+    color: var(--accent);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border-medium);
+}
+
+.capabilities-table td {
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+    transition: var(--transition);
+}
+
+.capabilities-table tr:last-child td {
+    border-bottom: none;
+}
+
+.capabilities-table tr:hover td {
+    background: var(--bg-card-hover);
+    color: #fff;
+}
