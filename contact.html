@@ -277,11 +277,15 @@
                         });
                         
                         if (response.ok) {
+                            // Generate a unique lead_id for GA4 custom dimension
+                            const leadId = 'lead_' + Date.now() + '_' + Math.random().toString(36).substring(2, 10);
+
                             // Fire GA4 generate_lead event
                             if (typeof gtag !== 'undefined') {
                                 gtag('event', 'generate_lead', {
                                     'event_category': 'lead',
                                     'event_label': 'enquiry_form_submission',
+                                    'lead_id': leadId,
                                     'value': 1.0,
                                     'currency': 'INR'
                                 });
