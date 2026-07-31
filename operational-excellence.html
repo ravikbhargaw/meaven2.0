@@ -262,6 +262,268 @@
                     <div class="mosaic-label">Innovation: Slim Profile Glass</div>
                 </div>
             </div>
+            <!-- Load More Button -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <button id="load-more-btn" onclick="toggleGallery()" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.6rem; font-size: 1rem; padding: 1rem 2.5rem; border-radius: 50px; border: 1.5px solid rgba(0,0,0,0.2); cursor: pointer; background: white; transition: all 0.3s ease;">
+                    <span id="load-more-text">View Full Site Gallery</span>
+                    <svg id="load-more-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <p style="margin-top: 0.75rem; font-size: 0.8rem; opacity: 0.45;">45+ additional site images & videos</p>
+            </div>
+
+            <!-- Extended Gallery (hidden by default) -->
+            <div id="extended-gallery" style="display: none; margin-top: 3rem;">
+                <div class="extended-grid">
+
+                    <!-- Row of videos first -->
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%201.jpg">
+                            <source data-src="images/portfolio/Black%20Matte%20-%2045MM%20-%206.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Profile: 45MM Black Matte</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/Black%20Matte%20-%2045MM%20-%202.jpg">
+                            <source data-src="images/portfolio/Black%20Matte%20Fish%20Mouth.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Detail: Fish Mouth Junction</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/IMG-20250909-WA0071.jpg">
+                            <source data-src="images/portfolio/VID-20250909-WA0001.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Site WIP: Installation Progress</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/IMG-20250909-WA0073.jpg">
+                            <source data-src="images/portfolio/VID-20250409-WA0003.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Execution: Glass System Install</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/IMG-20250909-WA0074.jpg">
+                            <source data-src="images/portfolio/VID-20250409-WA0005.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Scale: Full Floor Fit-Out</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/IMG-20250917-WA0133.jpg">
+                            <source data-src="images/portfolio/VID-20250409-WA0006.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">WIP: Frame Alignment</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/IMG-20250917-WA0134.jpg">
+                            <source data-src="images/portfolio/VID-20250409-WA0007.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Detail: Hardware Fitment</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/IMG-20250909-WA0075.jpg">
+                            <source data-src="images/portfolio/VID-20250409-WA0008.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Finish: Final Seal Check</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/IMG-20250909-WA0076.jpg">
+                            <source data-src="images/portfolio/VID-20250409-WA0009.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Handover: Project Closeout</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/IMG-20250909-WA0080.jpg">
+                            <source data-src="images/portfolio/VID-20250709-WA0005.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Site: Live Installation</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/IMG-20250909-WA0082.jpg">
+                            <source data-src="images/portfolio/VID-20250709-WA0006.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Precision: Profile Fitting</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/IMG-20250909-WA0083.jpg">
+                            <source data-src="images/portfolio/VID-20250709-WA0011.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Quality: Edge Finishing</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/IMG-20250909-WA0078.jpg">
+                            <source data-src="images/portfolio/VID-20250709-WA0012.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Engineering: Corner Junction</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/IMG-20250909-WA0079.jpg">
+                            <source data-src="images/portfolio/VID-20250709-WA0013.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Scale: Open Plan Partition</div>
+                    </div>
+                    <div class="ext-item ext-video">
+                        <video loop muted playsinline preload="none" poster="images/portfolio/IMG-20250918-WA0035.jpg">
+                            <source data-src="images/portfolio/VID-20250709-WA0018.mp4" type="video/mp4">
+                        </video>
+                        <div class="ext-label">Walkthrough: Full Installation</div>
+                    </div>
+
+                    <!-- Photo grid -->
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250909-WA0071.jpg" alt="Site Installation" loading="lazy">
+                        <div class="ext-label">Project: Completed Glass Wall</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250909-WA0073.jpg" alt="Glass Partition" loading="lazy">
+                        <div class="ext-label">Finish: Clean Partition Line</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250909-WA0074.jpg" alt="Site Work" loading="lazy">
+                        <div class="ext-label">WIP: Structural Alignment</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250909-WA0075.jpg" alt="Installation" loading="lazy">
+                        <div class="ext-label">Site: Panel Placement</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250909-WA0076.jpg" alt="Glass Wall" loading="lazy">
+                        <div class="ext-label">Detail: Frame to Wall Interface</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250909-WA0078.jpg" alt="Office Partition" loading="lazy">
+                        <div class="ext-label">Execution: Office Partition</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250909-WA0079.jpg" alt="Fit-Out" loading="lazy">
+                        <div class="ext-label">Progress: Fit-Out in Motion</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250909-WA0080.jpg" alt="Glass Installation" loading="lazy">
+                        <div class="ext-label">Scale: Multi-Bay Partition</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250909-WA0082.jpg" alt="Precision Work" loading="lazy">
+                        <div class="ext-label">Precision: Sealed Joint</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250909-WA0083.jpg" alt="Hardware Detail" loading="lazy">
+                        <div class="ext-label">Hardware: Premium Ironmongery</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250917-WA0133.jpg" alt="Completed Project" loading="lazy">
+                        <div class="ext-label">Handover: Project Complete</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250917-WA0134.jpg" alt="Final Install" loading="lazy">
+                        <div class="ext-label">Final: Quality Sign-Off</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250918-WA0055.jpg" alt="Glass System" loading="lazy">
+                        <div class="ext-label">System: Glass Frame Assembly</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250918-WA0056.jpg" alt="Site Detail" loading="lazy">
+                        <div class="ext-label">Detail: Profile Fitment</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250918-WA0057.jpg" alt="Installation View" loading="lazy">
+                        <div class="ext-label">View: Partition Array</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250918-WA0223.jpg" alt="Workspace" loading="lazy">
+                        <div class="ext-label">Workspace: Post-Handover</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250918-WA0224.jpg" alt="Office Glass" loading="lazy">
+                        <div class="ext-label">Office: Clear Sightlines</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250918-WA0225.jpg" alt="Commercial Fit-Out" loading="lazy">
+                        <div class="ext-label">Commercial: Premium Fit-Out</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250918-WA0226.jpg" alt="Glass Wall System" loading="lazy">
+                        <div class="ext-label">System: Wall to Ceiling</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250918-WA0229.jpg" alt="Partition Detail" loading="lazy">
+                        <div class="ext-label">Detail: Flush Finish</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/IMG-20250918-WA0232.jpg" alt="Glass System" loading="lazy">
+                        <div class="ext-label">Engineering: Structural Glass</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/WhatsApp%20Image%202025-11-27%20at%2021.01.34_cfd75f00.jpg" alt="Completed Project" loading="lazy">
+                        <div class="ext-label">Project: November Handover</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/WhatsApp%20Image%202025-11-27%20at%2021.01.54_5346b5bd.jpg" alt="Glass Wall" loading="lazy">
+                        <div class="ext-label">Finish: Polished Edge</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/WhatsApp%20Image%202025-11-27%20at%2021.01.56_a1bdb60f.jpg" alt="Office Partition" loading="lazy">
+                        <div class="ext-label">Office: Slim-Profile System</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/WhatsApp%20Image%202025-11-27%20at%2021.01.57_c85b909d.jpg" alt="Premium Finish" loading="lazy">
+                        <div class="ext-label">Premium: Flagship Fit-Out</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/WhatsApp%20Image%202025-11-27%20at%2021.01.56_dd36b610.jpg" alt="Glass Install" loading="lazy">
+                        <div class="ext-label">Installation: Zero Gaps</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/WhatsApp%20Image%202025-11-27%20at%2021.02.01_43c0dcaa.jpg" alt="Site Work" loading="lazy">
+                        <div class="ext-label">Site: Aligned Panels</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/WhatsApp%20Image%202025-11-27%20at%2021.02.02_c3a5efa7.jpg" alt="Execution" loading="lazy">
+                        <div class="ext-label">Execution: On-Time Delivery</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/WhatsApp%20Image%202025-11-27%20at%2021.02.06_5554e312.jpg" alt="Glass Partition" loading="lazy">
+                        <div class="ext-label">Partition: Conference Room</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/WhatsApp%20Image%202025-11-27%20at%2021.02.07_cc4eeea8.jpg" alt="Workspace" loading="lazy">
+                        <div class="ext-label">Workspace: Light & Open</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/WhatsApp%20Image%202025-11-27%20at%2021.02.08_32e866f1.jpg" alt="Completed" loading="lazy">
+                        <div class="ext-label">Completion: Snag-Free</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/WhatsApp%20Image%202025-09-18%20at%2017.34.35_834dc403.jpg" alt="Glass System" loading="lazy">
+                        <div class="ext-label">System: Floor-to-Ceiling</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/WhatsApp%20Image%202025-09-18%20at%2017.45.10_1bb0de9d.jpg" alt="Interior Glass" loading="lazy">
+                        <div class="ext-label">Interior: Premium Glazing</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/WhatsApp%20Image%202025-09-18%20at%2017.45.15_bcb50bed.jpg" alt="Glass Wall" loading="lazy">
+                        <div class="ext-label">Finish: Consistent Reveal</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/Black%20Matte%20-%2045MM%20-%204.jpg" alt="Black Matte Profile" loading="lazy">
+                        <div class="ext-label">Profile: 45MM Hardware Detail</div>
+                    </div>
+                    <div class="ext-item">
+                        <img src="images/portfolio/White%20Powder%20Coated%20-%2045MM%20-%202.jpg" alt="White Powder Coated" loading="lazy">
+                        <div class="ext-label">Finish: White Powder Coat</div>
+                    </div>
+
+                </div><!-- end extended-grid -->
+
+                <!-- Collapse button at bottom -->
+                <div style="text-align: center; margin-top: 2.5rem;">
+                    <button onclick="toggleGallery()" style="background: none; border: none; cursor: pointer; font-size: 0.9rem; color: rgba(0,0,0,0.5); display: inline-flex; align-items: center; gap: 0.4rem; font-family: inherit; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                        Collapse Gallery
+                    </button>
+                </div>
+            </div>
+
             <p style="margin-top: 4rem; text-align: center; font-size: 0.875rem; opacity: 0.7; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
                 <strong>Absolute Transparency:</strong> Every image and video displayed in our portfolio is 100% authentic, raw site footage. We do not use 3D renderings, AI enhancements, or staged photography to misrepresent our execution quality.
             </p>
@@ -362,6 +624,66 @@
         document.querySelectorAll(".mosaic-item").forEach(item => {
             observer.observe(item);
         });
+    </script>
+
+    <!-- Extended Gallery Toggle & Lazy Load -->
+    <script>
+        let galleryOpen = false;
+        let extObserver = null;
+
+        function toggleGallery() {
+            const gallery = document.getElementById('extended-gallery');
+            const btn = document.getElementById('load-more-btn');
+            const text = document.getElementById('load-more-text');
+            const icon = document.getElementById('load-more-icon');
+
+            galleryOpen = !galleryOpen;
+
+            if (galleryOpen) {
+                gallery.style.display = 'block';
+                text.textContent = 'Collapse Gallery';
+                icon.innerHTML = '<polyline points="18 15 12 9 6 15"></polyline>';
+                btn.style.borderColor = 'rgba(0,0,0,0.4)';
+
+                // Lazy load videos as they scroll into view
+                if (!extObserver) {
+                    extObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const video = entry.target.querySelector('video');
+                                if (video) {
+                                    const source = video.querySelector('source[data-src]');
+                                    if (source) {
+                                        source.src = source.getAttribute('data-src');
+                                        source.removeAttribute('data-src');
+                                        video.load();
+                                        video.play().catch(() => {});
+                                    }
+                                }
+                                extObserver.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.1, rootMargin: "0px 0px 100px 0px" });
+
+                    document.querySelectorAll('.ext-item.ext-video').forEach(item => {
+                        extObserver.observe(item);
+                    });
+                }
+
+                // Smooth scroll to gallery
+                setTimeout(() => {
+                    gallery.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 50);
+            } else {
+                gallery.style.display = 'none';
+                text.textContent = 'View Full Site Gallery';
+                icon.innerHTML = '<polyline points="6 9 12 15 18 9"></polyline>';
+                btn.style.borderColor = 'rgba(0,0,0,0.2)';
+
+                // Scroll back up to button
+                btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
     </script>
 </body>
 </html>
