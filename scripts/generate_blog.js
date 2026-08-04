@@ -107,27 +107,43 @@ function getExistingContent() {
     return { titles, images };
 }
 
+const TOPICS_PATH = 'scripts/blog_topics.json';
+
+function getTopics() {
+    if (!fs.existsSync(TOPICS_PATH)) {
+        throw new Error(`Topics file ${TOPICS_PATH} not found.`);
+    }
+    return JSON.parse(fs.readFileSync(TOPICS_PATH, 'utf-8'));
+}
+
 // Generate blog content with model fallback and dynamic prompt avoidance
 async function generateBlogContent(existingTitles) {
+    const topics = getTopics();
+    const pillarIndex = existingTitles.length % topics.length;
+    const currentPillar = topics[pillarIndex];
+    console.log(`Selected Pillar [Index ${pillarIndex}]: Category "${currentPillar.category}"`);
+
     if (process.argv.includes('--mock')) {
         console.log("Mock mode enabled. Generating high-quality mock B2B blog post...");
         return {
-            title: "Precision Modular Partitions: Designing for 45dB Acoustic Isolation in Modern Bangalore Workspaces",
-            category: "Acoustics",
-            meta_description: "Learn how to achieve 45dB acoustic isolation using double-glazed partition systems and precision aluminum frame engineering in high-density Bangalore offices.",
-            lead_text: "In high-density office hubs like Outer Ring Road and Whitefield, open-plan noise is the primary barrier to leadership focus. Achieving high-performance acoustic privacy requires more than just glass — it requires precision modular coordination.",
-            content_html: `<h2>The Physics of Acoustic Leaks</h2>
-<p>Noise doesn't just pass through glass; it exploits structural gaps. A mere 2mm gap in a perimeter silicone joint or a poorly aligned floor spring pivot can degrade a 48dB partition assembly down to 32dB, completely negating the benefit of premium double-glazed glass.</p>
-<h3>Double Glazing and STC Ratings</h3>
-<p>For conference rooms and private executive suites in Bangalore, we specify custom-manufactured double-glazed systems using 10mm and 12mm toughened acoustic laminated glass. By combining two different glass thicknesses, we prevent resonance coupling, allowing the system to achieve an active Sound Transmission Class (STC) rating of 45dB to 48dB.</p>
-<h2>Precision Engineering Over Site Guesswork</h2>
+            title: "How Much Do Office Glass Partitions Cost per Sq Ft in Bangalore?",
+            category: currentPillar.category,
+            meta_description: "Planning an office fit-out in Bangalore? Discover what really drives glass partition pricing per square foot, common budget traps, and how to get accurate quotes.",
+            lead_text: "Estimating the cost of glass partitions for your new Bangalore office can feel confusing with quotes varying wildly between vendors. Here is a straight breakdown of what drives the real price per square foot so you can budget accurately.",
+            content_html: `<h2>Understanding Glass Partition Cost Factors in Bangalore</h2>
+<p>When setting up a commercial office in Bangalore tech hubs like ORR or Whitefield, glass partitions are typically one of your largest fit-out line items. While basic single-glazed framing starts at competitive square-foot rates, final costs depend heavily on three core decisions: glass thickness, framing profile, and door hardware.</p>
+<h3>1. Glass Specifications: Single vs. Double Glazing</h3>
+<p>Single-glazed 10mm or 12mm toughened glass is the standard choice for general meeting rooms and team spaces. However, if executive cabins or HR rooms require complete conversation privacy, double-glazed <a href="../acoustic-partitions.html">acoustic glass partitions</a> will add 30% to 45% to your material cost but effectively prevent sound leakage.</p>
+<h3>2. Frame Finish and Profiles</h3>
+<p>Minimalist slimline aluminum profiles offer a modern look and fast installation. Opting for custom powder-coated finishes or anodized black frames slightly increases cost, but ensures long-term resistance against high-traffic wear.</p>
+<h2>Three Red Flags in Vendor Cost Quotes</h2>
 <ul>
-<li><strong>Clearance Tolerances:</strong> All aluminum extrusions are manufactured to a sub-millimetre clearance tolerance (+/- 0.5mm), ensuring air-tight compression joints.</li>
-<li><strong>Acoustic Seals:</strong> Double-finned heavy-duty EPDM gaskets are installed continuously along the glass perimeters to seal off micro-air gaps.</li>
-<li><strong>Drop-Seal Mechanisms:</strong> For glass doors, we integrate premium automatic drop seals that activate when the door shuts, closing the standard 6mm floor clearance gap.</li>
+<li><strong>Missing Hardware Specifications:</strong> Ensure the quote explicitly includes heavy-duty floor springs, handles, and locksets rather than generic unbranded hardware.</li>
+<li><strong>Omitted Site Logistics:</strong> High-rise tech park deliveries often incur extra freight or night-shift installation fees. Confirm your quote covers site delivery and hoisting.</li>
+<li><strong>Vague Acoustic Claims:</strong> Don't pay premium rates for "soundproof glass" without verifying the perimeter seals and door drop-seal inclusions.</li>
 </ul>
-<p>At Meaven, our Execution Intelligence framework ensures that site measurements are taken using high-precision digital laser tools, eliminating errors before the modular frames are delivered to site.</p>`,
-            slug: "precision-modular-partitions-acoustic-isolation-bangalore"
+<p>Planning an upcoming office fit-out? Reach out to <a href="../contact.html">contact our team at Meaven</a> for transparent, fixed-price estimates tailored to your workspace layout.</p>`,
+            slug: "office-glass-partition-cost-per-sqft-bangalore"
         };
     }
 
@@ -137,39 +153,44 @@ async function generateBlogContent(existingTitles) {
     }
 
     const apiKey = GEMINI_API_KEY.trim();
-    const models = ["gemini-3.5-flash", "gemini-2.5-flash"];
-
-    // Format list of existing titles to instruct the AI what NOT to write about
-    const avoidedTitlesText = existingTitles.length > 0 
-        ? existingTitles.map(t => `- "${t}"`).join('\n')
-        : "None (first article)";
+    // Prioritized model chain with fallbacks
+    const models = [
+        "gemini-2.5-flash",
+        "gemini-2.0-flash",
+        "gemini-1.5-flash",
+        "gemini-2.5-pro",
+        "gemini-1.5-pro"
+    ];
 
     const prompt = `
-Write a high-quality, professional B2B blog post for 'Meaven Designs' (an office partition and premium workspace execution company in Bangalore, India).
-Tone: Premium, highly technical, architectural, and authoritative.
-Target Audience: Project owners, builders, developers, managed office operators, and architects in Bangalore.
+Write a practical, helpful B2B blog post for Meaven (commercial glass partition and office fit-out execution company in Bangalore, India).
 
-CRITICAL REQUIREMENT (TOPIC & HEADLINE UNIQUENESS):
-You MUST NOT write about, duplicate, or closely match any of these existing article headlines already on our site:
-${avoidedTitlesText}
+Tone: Clear, direct, and genuinely useful — like an experienced contractor giving straight advice to someone who is NOT a technical expert. Avoid engineering jargon (no STC ratings, extrusion grades, or lab terminology) unless it's explained in plain language with why it matters to the reader. Write the way you'd explain something to a smart business owner who has never dealt with fit-outs before.
 
-Core Hot Topics to Select From (Ensure fresh angles and highly knowledgeable insights):
-- High-spec managed office developments and coworking structures (flexible, modular floor plates).
-- The massive wave of Global Capability Centers (GCCs) setting up in Bangalore and their rigorous demand for acoustic privacy, fast-track turnkey execution, and strict architectural standards.
-- Advanced acoustics (STC calculations, glass asymmetrical laminations, dual-durometer EPDM gaskets).
-- Turnkey execution, pre-construction 3D laser scanning (preventing beam deflection and structural leveling mismatch, defeating the blame-shifting construction cycle).
-- Concrete structural engineering specs (e.g. 6063-T6 architectural aluminum extrusions, sub-millimetre tolerance clearances).
-- Highly localized focus targeting builders, top-tier architects, and key Bangalore micro-markets (Outer Ring Road, Sarjapur, Whitefield, Manyata Tech Park, Electronic City, Indiranagar).
+Target Audience: Office managers, HR/admin heads, startup founders, coworking operators, and procurement decision-makers in Bangalore who are researching or planning an office fit-out — NOT architects or engineers.
 
-Choose ONE category from: ${CATEGORIES.map(c => `"${c}"`).join(', ')}.
+Topic Pillar for this post: ${currentPillar.pillar}
+
+Requirements:
+- Address a real, specific question or pain point this audience actually searches for
+- Include one practical example, checklist, or rule-of-thumb the reader can act on
+- Naturally reference 1-2 of these Meaven pages where relevant:
+  - Acoustic Partitions: ../acoustic-partitions.html
+  - Slim Glass Partitions: ../slim-glass-partitions.html
+  - Stile Doors: ../stile-doors.html
+  - Shower Enclosures: ../shower-enclosures.html
+  - Coworking Solutions: ../coworking-solutions.html
+  - Contact Us: ../contact.html
+  with a natural anchor text link in the content_html (e.g. <a href="../acoustic-partitions.html">acoustic glass partitions</a> or <a href="../contact.html">contact our team</a>)
+- End with a soft, non-pushy call to action pointing to ../contact.html
 
 Output strictly a JSON object with exactly these keys:
-- "title": A unique, expert-level B2B article title focusing on coworking, GCCs, acoustics, or premium workspace execution (never repeat or closely mimic the avoided headlines above!).
-- "category": The exact category selected.
-- "meta_description": A clear SEO description (120-160 characters).
-- "lead_text": A strong, punchy introductory lead paragraph (1-2 sentences).
-- "content_html": The full article body in HTML. Use <h2>, <h3>, <p>, <ul>, <li>, <strong>, <em> tags. Must include technical engineering details, localized context, and deep execution insights.
-- "slug": A URL-friendly version of the title.
+- "title": A clear, benefit-driven title a real buyer would search for
+- "category": "${currentPillar.category}"
+- "meta_description": SEO description, 120-160 characters, written for a human searcher not a search engine
+- "lead_text": A strong, plain-English opening (1-2 sentences) that states the reader's problem
+- "content_html": Full article body, 600-900 words, using <h2>, <h3>, <p>, <ul>, <li>, <strong>, and at least one <a href="..."> internal link to a Meaven page
+- "slug": URL-friendly version of the title
 
 Strictly return ONLY the JSON object. Do not wrap it in markdown code block or any additional text.
 `;
@@ -200,6 +221,11 @@ Strictly return ONLY the JSON object. Do not wrap it in markdown code block or a
 
         try {
             const res = await makePostRequest(url, requestData);
+            if (!res.candidates || !res.candidates[0] || !res.candidates[0].content || !res.candidates[0].content.parts || !res.candidates[0].content.parts[0]) {
+                const feedback = res.promptFeedback ? JSON.stringify(res.promptFeedback) : 'No candidate content returned';
+                throw new Error(`Invalid/blocked response from Gemini API (${model}). Feedback: ${feedback}`);
+            }
+
             const textResponse = res.candidates[0].content.parts[0].text.trim();
             
             let cleanedJson = textResponse;
